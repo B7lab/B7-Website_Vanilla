@@ -32,17 +32,11 @@
 
         <nav class="menu" id="mainMenu">
             <ul class="menu-list">
-                <li><a href="index.php">Start</a></li>
-                <li class="has-submenu">
-                    <a href="#">Über uns</a>
-                    <ul class="sub-menu">
-                        <li><a href="team.php">Team</a></li>
-                        <li><a href="geschichte.php">Geschichte</a></li>
-                    </ul>
-                </li>
-                <li><a href="partner.php">Partner</a></li>
-                <li><a href="blog.php">Blog</a></li>
-                <li><a href="kontakt.php">Kontakt</a></li>
+                <li><a href="#">Start</a></li>
+                <li><a href="#">Über uns</a></li>
+                <li><a href="#">Partner</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Kontakt</a></li>
             </ul>
         </nav>
     </div>
