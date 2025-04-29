@@ -15,6 +15,7 @@
 
 /* CSS-Reset */
 * {
+
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -78,6 +79,7 @@ section {
 }
 
 
+
 /* ------------- */
 /* ---DESIGNS--- */
 /* ------------- */
@@ -86,31 +88,6 @@ section {
 /* ---HEADER--- */
 /* ------------ */
 
-/* #main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--waschkauenweiß);
-    width: 100%;
-    padding: 10px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-#sponsors {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--waschkauenweiss);
-    color: var(--kohlenschwarz);
-    text-align: center;
-    margin: 10px 20px;
-    display: flex;
-    justify-content: center;
-    flex-grow: 2;
-    align-items: center;
-    gap: 20px; 
-    padding: 10px;
-} */
 #main-header {
     display: flex;
     justify-content: space-between; /* Platz zwischen den beiden Elementen (Sponsoren und Menü) */
@@ -124,23 +101,12 @@ section {
 #sponsors {
     display: flex;
     align-items: center;
-    justify-content: center; /* Zentriert die Sponsoren */
-    flex-grow: 1; /* Nimmt den verbleibenden Platz ein */
+    justify-content: center; 
+    flex-grow: 1; 
     padding: 5px 10px;
     max-width: 32%;
     margin: auto;
-
-    /* background-color: var(--waschkauenweiss);
-    color: var(--kohlenschwarz); */
 }
-
-/* #menu-container {
-    display: flex;
-    justify-content: flex-end; /* Verschiebt das Menü nach rechts */
-    align-items: center;
-    margin-left: auto; /* Erlaubt es dem Menü, ganz nach rechts zu rutschen */
-} */
-
 
 #sponsors p {
     font-size: 1.2rem;
@@ -154,9 +120,9 @@ section {
     justify-content: center;
     align-items: center;
     background-color: var(--waschkauenweiss);
-    padding: 5px 10px;
+    padding: 5px 15px;
     margin: 0 20px;
-    gap: 20px; /* Abstand zwischen Logos */
+    gap: 20px; 
 }
 
 .sponsor-logos img {
@@ -172,8 +138,6 @@ section {
     position: relative;
     display: flex;
     justify-content: flex-end; 
-    margin-left: auto;
-    width: 100%;
     padding: 20px 20px; 
 }
 
@@ -400,18 +364,11 @@ section {
 
 /* Hero-Banner */
 
-#hero-banner-logo {
-    max-height: 33%; 
-    width: auto; 
-    top: 25%; 
-    transform: translateY(-50%); 
-}
-
 #hero-banner {
     background-image: url('../assets/img/hero-banner.jpg');
     background-size: cover;
     background-position: center;
-    height: 30vh; 
+    height: 50vh; 
     display: flex;
     flex-direction: column; 
     justify-content: center;
@@ -420,33 +377,92 @@ section {
     position: relative;
 }
 
+#hero-banner-logo {
+    height: 25%;
+    position: absolute;
+    top: 25%; 
+    transform: translateY(-50%); 
+}
+
+.hero-buttons {
+    position: absolute;
+    top: 3%;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
+
+#join-button, #donate-button {
+    display: flex;
+    align-items: center;
+    background-color: var(--b7-gelb);
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    padding: 0;
+    height: 40px;
+}
+
+.btn-icon {
+    background-color: var(--b7-gelb);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.btn-label {
+    padding: 0 15px;
+    white-space: nowrap;
+}
+
+.btn-gap {
+    width: 10px;
+}
+
+#join-button:hover, #donate-button:hover {
+    background-color: var(--technikblau);
+}
+
 #hero-sub-banner-1 {
     background-color: var(--technikblau);
     width: 100%;
     height: 50px;
-    transform: skewY(2deg);
-    margin-bottom: -5px;
+    overflow: visible;
+    transform: skewY(3deg);
+    margin-top: 35vh;
+    padding-right: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--kohlenschwarz);
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
     font-weight: bold;
-    text-align: center;
-}
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);}
+
+
 
 #hero-sub-banner-2 {
     background-color: var(--signalrot);
     width: 100%;
     height: 50px;
+    overflow: visible;
     transform: skewY(-2deg);
-    margin-bottom: -15px;
+    padding-left: 10%;
     display: flex;
     justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     align-items: center;
     color: var(--kohlenschwarz);
-    font-size: 1.2rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;

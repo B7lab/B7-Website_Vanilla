@@ -6,6 +6,18 @@ include 'php/header.php';
 <main>
     <!-- Banner -->
     <div id="hero-banner">
+        <div class="hero-buttons">
+            <button id="join-button">
+                <span class="btn-icon">👤</span>
+                <span class="btn-gap"></span>
+                <span class="btn-label">Mitglied werden</span>
+            </button>
+            <button id="donate-button">
+                <span class="btn-icon">💶</span>
+                <span class="btn-gap"></span>
+                <span class="btn-label">Jetzt spenden</span>
+            </button>
+    </div>
         <img src="assets/logo/logo4.png" alt="B7 Logo" id="hero-banner-logo">
         <div id="hero-sub-banner-1">
             <p>Die Zeche</p>
