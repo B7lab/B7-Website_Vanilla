@@ -4,9 +4,7 @@ $pageTitle = 'Startseite';
 
 ?>
 <main>
-    <?php include __DIR__ . '/../template/bigbanner.php'; ?>
-    <!-- Banner -->
-
+    <?php include __DIR__ . '/../template/hero-banner.php'; ?>
 
     <div class=content-container>
     <section id="teaser">

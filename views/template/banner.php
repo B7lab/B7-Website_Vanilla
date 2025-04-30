@@ -1,1 +1,0 @@
-<h1>Hier das schmalere banner</h1>

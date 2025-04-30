@@ -22,13 +22,14 @@ $router = new AltoRouter();
 
 $router->setBasePath('');
 
+// ROUTING
+
+// 
+// Default routes
+// 
 
 $router->map('GET', '/', function() {
     render('pages/home');
-});
-
-$router->map('GET', '/vision', function() {
-    render('pages/vision');
 });
 
 $router->map('GET', '/kontakt', function() {
@@ -37,6 +38,43 @@ $router->map('GET', '/kontakt', function() {
 
 $router->map('GET', '/user', function($id) {
     render('pages/user');
+});
+
+$router->map('GET', '/impressum', function() {
+    render('pages/impressum');
+});
+
+$router->map('GET', '/datenschutz', function() {
+    render('pages/datenschutz');
+});
+
+
+// 
+// Areas
+// 
+
+$router->map('GET', '/vision', function() {
+    render('pages/vision');
+});
+
+$router->map('GET', '/umbauarbeiten', function() {
+    render('pages/umbauarbeiten');
+});
+
+$router->map('GET', '/veranstaltungen', function() {
+    render('pages/veranstaltungen');
+});
+
+$router->map('GET', '/fotogalerie', function() {
+    render('pages/fotogalerie');
+});
+
+$router->map('GET', '/teaser5', function() {
+    render('pages/teaser5');
+});
+
+$router->map('GET', '/kooperationsparterInnen', function() {
+    render('pages/kooperationspartnerInnen');
 });
 
 $match = $router->match();

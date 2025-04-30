@@ -380,7 +380,7 @@ section {
     transform: translateY(-50%); 
 }
 
-.hero-buttons {
+.banner-buttons {
     position: absolute;
     top: 3%;
     right: 0;
@@ -405,7 +405,7 @@ section {
     height: 30px;
 }
 
-.hero-btn-icon {
+.banner-btn-icon {
     background-color: var(--b7-gelb);
     width: 30px;
     height: 30px;
@@ -415,14 +415,14 @@ section {
     font-size: 1.2rem;
 }
 
-.hero-btn-label {
+.banner-btn-label {
     background-color: var(--b7-gelb);
     padding: 10px;
     text-align: center;
     flex-grow: 1;
 }
 
-.hero-btn-gap {
+.banner-btn-gap {
     width: 5px;
 }
 
