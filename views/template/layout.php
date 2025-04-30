@@ -40,6 +40,8 @@
             </nav>
         </div>
     </header>
+    
+    <?php include $viewFile; ?>
 
     <script>
     function toggleMenu() {
@@ -53,6 +55,5 @@
         });
     }
     </script>
-    <?php include $viewFile; ?>
 </body>
 </html>

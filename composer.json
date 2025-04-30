@@ -1,0 +1,13 @@
+{
+    "name": "b7/b7-website_vanilla",
+    "description": "Website B7 2025",
+    "require": {
+        "twig/twig": "^3.20",
+        "altorouter/altorouter": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "B7\\B7WebsiteVanilla\\": "src/"
+        }
+    }
+}
