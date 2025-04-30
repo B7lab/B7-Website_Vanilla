@@ -73,8 +73,8 @@ $router->map('GET', '/teaser5', function() {
     render('pages/teaser5');
 });
 
-$router->map('GET', '/kooperationsparterInnen', function() {
-    render('pages/kooperationspartnerInnen');
+$router->map('GET', '/kooperationspartner_innen', function() {
+    render('pages/kooperationspartner_innen');
 });
 
 $match = $router->match();

@@ -19,9 +19,9 @@
     </div>
         <img src="/public/img/logo/logo4.png" alt="B7 Logo" id="hero-banner-logo">
         <div class="color-band" id="hero-sub-banner-1">
-            <p>Die Zeche</p>
+            <h1>Die Zeche</h1>
         </div>
         <div class="color-band" id="hero-sub-banner-2">
-            <p>zum Mitmachen</p>
+            <h2>zum Mitmachen</h2>
         </div>
 </div>

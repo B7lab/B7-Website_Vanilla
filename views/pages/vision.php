@@ -1,8 +1,14 @@
 <main>
-    <?php include __DIR__ . '/../template/page-banner.php'; ?>
+    <?php
+        $pageTitle = "Unsere Vision";
+        $pageSubtitle = "Wir sind ein Ort der Begegnung und des Austausches";
+        include __DIR__ . '/../template/page-banner.php'; 
+    ?>
 
     <div class=content-container>
-        Content
+        <p>
+            Content
+        </p>
     </div>
     
 </main>
