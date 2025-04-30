@@ -39,6 +39,7 @@ html, body {
 }
 
 /* Links */
+
 a {
     color: var(--technikblau);
     text-decoration: none;

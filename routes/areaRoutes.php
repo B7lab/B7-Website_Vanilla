@@ -1,24 +1,24 @@
 <?php
 $areaRouter->map('GET', '/vision', function() {
-    render('pages/vision');
+    render('area/vision');
 });
 
 $areaRouter->map('GET', '/umbauarbeiten', function() {
-    render('pages/umbauarbeiten');
+    render('area/umbauarbeiten');
 });
 
 $areaRouter->map('GET', '/veranstaltungen', function() {
-    render('pages/veranstaltungen');
+    render('area/veranstaltungen');
 });
 
 $areaRouter->map('GET', '/fotogalerie', function() {
-    render('pages/fotogalerie');
+    render('area/fotogalerie');
 });
 
 $areaRouter->map('GET', '/teaser5', function() {
-    render('pages/teaser5');
+    render('area/teaser5');
 });
 
 $areaRouter->map('GET', '/kooperationspartner_innen', function() {
-    render('pages/kooperationspartner_innen');
+    render('area/kooperationspartner_innen');
 });

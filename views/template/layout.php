@@ -74,9 +74,9 @@
         <div class="container">
             <div id="footer-links">
                 <ul>
-                    <li><a href="kontakt.php">Kontakt</a></li>
-                    <li><a href="datenschutz.php">Datenschutz</a></li>
-                    <li><a href="impressum.php">Impressum</a></li>
+                    <li><a href="/kontakt">Kontakt</a></li>
+                    <li><a href="/datenschutz">Datenschutz</a></li>
+                    <li><a href="/impressum">Impressum</a></li>
                     <li>
                         <a href="https://facebook.com" target="_blank">
                             <img src="public/img/icon/facebook-icon_800x800.svg" alt="Facebook">

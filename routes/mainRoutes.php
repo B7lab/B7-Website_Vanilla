@@ -1,20 +1,20 @@
 <?php
 $mainRouter->map('GET', '/', function() {
-    render('pages/home');
+    render('main/home');
 });
 
 $mainRouter->map('GET', '/kontakt', function() {
-    render('pages/kontakt');
+    render('main/kontakt');
 });
 
 $mainRouter->map('GET', '/user/[i:id]', function($id) {
-    render('pages/user');
+    render('main/user');
 });
 
 $mainRouter->map('GET', '/impressum', function() {
-    render('pages/impressum');
+    render('main/impressum');
 });
 
 $mainRouter->map('GET', '/datenschutz', function() {
-    render('pages/datenschutz');
+    render('main/datenschutz');
 });

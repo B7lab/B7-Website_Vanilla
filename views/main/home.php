@@ -21,22 +21,22 @@ $pageTitle = 'Startseite';
     <div class=teaser-container>
         <section id="teaser">
             <div id="teaser-box1" class="teaser-box">
-                <a href="/vision">
+                <a href="/area/vision">
                     <div class="teaser-box-content">Vision</div>
                 </a>
             </div>
             <div id="teaser-box2" class="teaser-box">
-                <a href="#">
+                <a href="/area/umbauarbeiten">
                     <div class="teaser-box-content">Umbauarbeiten</div>
                 </a>
             </div>
             <div id="teaser-box3" class="teaser-box">
-                <a href="#">
+                <a href="/area/veranstaltungen">
                     <div class="teaser-box-content">Veranstaltungen</div>
                 </a>
             </div>
             <div id="teaser-box4" class="teaser-box">
-                <a href="#">
+                <a href="/area/fotogalerie">
                     <div class="teaser-box-content">Fotogalerie</div>
                 </a>
             </div>
@@ -46,7 +46,7 @@ $pageTitle = 'Startseite';
                 </a>
             </div>
             <div id="teaser-box6" class="teaser-box">
-                <a href="#">
+                <a href="/area/kooperationspartner_innen">
                     <div class="teaser-box-content">Kooperationspartner:innen</div>
                 </a>
             </div>
