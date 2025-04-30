@@ -5,8 +5,13 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$router = new AltoRouter();
-$router->setBasePath(''); // falls dein Projekt unter /area liegt
+
+// Zwei Router-Instanzen
+$mainRouter = new AltoRouter();
+$mainRouter->setBasePath('');
+
+$areaRouter = new AltoRouter();
+$areaRouter->setBasePath('/area');
 
 function render($view, $data = []) {
     extract($data);
@@ -25,8 +30,18 @@ function render($view, $data = []) {
 require __DIR__ . '/routes/mainRoutes.php';
 require __DIR__ . '/routes/areaRoutes.php';
 
-// Routing starten
-$match = $router->match();
+
+// Aktuelle URL ermitteln
+$requestUri = $_SERVER['REQUEST_URI'];
+
+
+// Router auswählen
+if (str_starts_with($requestUri, '/area')) {
+    $match = $areaRouter->match();
+} else {
+    $match = $mainRouter->match();
+}
+
 
 if ($match && is_callable($match['target'])) {
     call_user_func_array($match['target'], $match['params']);
