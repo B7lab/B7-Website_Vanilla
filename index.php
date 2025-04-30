@@ -1,6 +1,8 @@
 <?php
 
-require_once __DIR__ . '/public/AltoRouter.php';
+require_once __DIR__ . '/vendor/autoload.php';
+
+
 
 function render($view, $data = []) {
     extract($data); // Macht $title, $name, etc. aus dem Array
@@ -20,16 +22,21 @@ $router = new AltoRouter();
 
 $router->setBasePath('');
 
+
 $router->map('GET', '/', function() {
-    render('pages/home', ['title' => 'Start', 'name' => 'Max']);
+    render('pages/home');
+});
+
+$router->map('GET', '/vision', function() {
+    render('pages/vision');
 });
 
 $router->map('GET', '/kontakt', function() {
-    render('pages/kontakt', ['title' => 'Kontakt']);
+    render('pages/kontakt');
 });
 
-$router->map('GET', '/user/[i:id]', function($id) {
-    render('pages/user', ['title' => "Benutzer $id", 'id' => $id]);
+$router->map('GET', '/user', function($id) {
+    render('pages/user');
 });
 
 $match = $router->match();
