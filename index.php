@@ -13,7 +13,7 @@ function render($view, $data = []) {
     }
 
     // Optional: Layout einbinden
-    include __DIR__ . "/views/layout.php";
+    include __DIR__ . "/views/template/layout.php";
 }
 
 $router = new AltoRouter();
@@ -21,15 +21,15 @@ $router = new AltoRouter();
 $router->setBasePath('');
 
 $router->map('GET', '/', function() {
-    render('home', ['title' => 'Start', 'name' => 'Max']);
+    render('pages/home', ['title' => 'Start', 'name' => 'Max']);
 });
 
 $router->map('GET', '/kontakt', function() {
-    render('kontakt', ['title' => 'Kontakt']);
+    render('pages/kontakt', ['title' => 'Kontakt']);
 });
 
 $router->map('GET', '/user/[i:id]', function($id) {
-    render('user', ['title' => "Benutzer $id", 'id' => $id]);
+    render('pages/user', ['title' => "Benutzer $id", 'id' => $id]);
 });
 
 $match = $router->match();
