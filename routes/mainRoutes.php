@@ -8,7 +8,8 @@ $mainRouter->map('GET', '/kontakt', function() {
 });
 
 $mainRouter->map('GET', '/user/[i:id]', function($id) {
-    render('main/user');
+    require_once __DIR__ . '/../controller/UserController.php';
+    showUserProfile($id);
 });
 
 $mainRouter->map('GET', '/impressum', function() {

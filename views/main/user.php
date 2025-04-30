@@ -1,3 +1,2 @@
-<h1>User</h1>
-<?= $title ?>
-<p>Benutzer-ID: <?= $id ?></p>
+<h2>Benutzerprofil</h2>
+<p>Name: <?= htmlspecialchars($user['name']) ?></p>
