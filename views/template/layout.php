@@ -71,6 +71,8 @@
     <script src="public/libs/jquery.js"></script>
     <script src="public/libs/gsap/gsap.min.js"></script>
     <script src="public/js/main.js"></script>
+    <script>
+    // Burger Menu Toggle
     function toggleMenu() {
         const menu = document.getElementById('mainMenu');
         menu.classList.toggle('open');
