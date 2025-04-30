@@ -78,8 +78,6 @@ section {
     text-align: center;   
 }
 
-
-
 /* ------------- */
 /* ---DESIGNS--- */
 /* ------------- */
@@ -90,7 +88,7 @@ section {
 
 #main-header {
     display: flex;
-    justify-content: space-between; /* Platz zwischen den beiden Elementen (Sponsoren und Menü) */
+    justify-content: space-between; 
     align-items: center;
     background-color: var(--waschkauenweiß);
     width: 100%;
@@ -247,7 +245,7 @@ section {
 }
 
 #footer-links a {
-    color: var(--waschkauenweiss);
+    color: var(--kohlenschwarz);
     font-size: 1rem;
     text-decoration: none;
     font-weight: 500;
@@ -270,6 +268,7 @@ section {
     font-size: 0.875rem;
     margin-top: 10px;
     opacity: 0.8;
+    margin-top: 15px;
 }
 
 #footer-color-band {
@@ -339,7 +338,6 @@ section {
 }
 
 
-
 /* Farbbänder */
 
 .color-band {
@@ -394,10 +392,11 @@ section {
     z-index: 10;
 }
 
+
 #join-button, #donate-button {
+    background-color: transparent !important;
     display: flex;
     align-items: center;
-    background-color: var(--b7-gelb);
     font-size: 1rem;
     font-weight: bold;
     border: none;
@@ -405,25 +404,27 @@ section {
     overflow: hidden;
     transition: background-color 0.3s ease;
     padding: 0;
-    height: 40px;
+    height: 30px;
 }
 
-.btn-icon {
+.hero-btn-icon {
     background-color: var(--b7-gelb);
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
 }
 
-.btn-label {
-    padding: 0 15px;
-    white-space: nowrap;
+.hero-btn-label {
+    background-color: var(--b7-gelb);
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1;
 }
 
-.btn-gap {
+.hero-btn-gap {
     width: 10px;
 }
 
@@ -446,9 +447,7 @@ section {
     font-size: 2.5rem;
     text-transform: uppercase;
     font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);}
-
-
+}
 
 #hero-sub-banner-2 {
     background-color: var(--signalrot);
@@ -459,7 +458,6 @@ section {
     padding-left: 10%;
     display: flex;
     justify-content: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     align-items: center;
     color: var(--kohlenschwarz);
     font-size: 2.5rem;
@@ -486,7 +484,8 @@ section {
 .teaser-box {
     position: relative;
     width: 100%;
-    padding-top: 100%;
+    height: 0;
+    padding-bottom: 99%; 
     background-color: var(--hellgrau);
     background-size: cover;
     background-position: center;
@@ -498,21 +497,22 @@ section {
     width: 100%;
     height: 100%;
     text-decoration: none;
-    color: white;
+    color: var(--waschkauenweiss);
     position: absolute;
     top: 0;
     left: 0;
 }
 
 .teaser-box-content {
+    width: 100%;
     position: absolute;
-    bottom: 10%;
+    bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
     font-weight: bold;
     font-size: 1.5rem;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     padding: 10px;
 }
 
