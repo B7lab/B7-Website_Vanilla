@@ -212,7 +212,6 @@ section {
     display: block;
 }
 
-
 /* Footer */
 
 #main-footer {
@@ -387,7 +386,7 @@ section {
     right: 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     z-index: 10;
 }
 
@@ -424,12 +423,13 @@ section {
 }
 
 .hero-btn-gap {
-    width: 10px;
+    width: 5px;
 }
 
 #join-button:hover, #donate-button:hover {
     background-color: var(--technikblau);
 }
+
 
 #hero-sub-banner-1 {
     background-color: var(--technikblau);
@@ -445,7 +445,7 @@ section {
     color: var(--kohlenschwarz);
     font-size: 2.5rem;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 900;
 }
 
 #hero-sub-banner-2 {
@@ -454,6 +454,7 @@ section {
     height: 50px;
     overflow: visible;
     transform: skewY(-2deg);
+    margin-top: 5vh;
     padding-left: 10%;
     display: flex;
     justify-content: center;
@@ -461,8 +462,7 @@ section {
     color: var(--kohlenschwarz);
     font-size: 2.5rem;
     text-transform: uppercase;
-    font-weight: bold;
-    text-align: center;
+    font-weight: 900;
 }
 
 .page .entry-title {

@@ -8,12 +8,18 @@ $pageTitle = 'Startseite';
     <div id="hero-banner">
         <div class="hero-buttons">
             <button id="join-button">
-                <span class="hero-btn-icon">👤</span>
+                <span class="hero-btn-icon">
+                    <img class="hero-btn-icon" src="/public/img/icon/schlaegel-und-eisen_icon.png" alt="schlaegel-und-eisen_icon">                
+
+                </span>
                 <span class="hero-btn-gap"></span>
                 <span class="hero-btn-label">Mitglied werden</span>
             </button>
             <button id="donate-button">
-                <span class="hero-btn-icon">💶</span>
+                <span class="hero-btn-icon">
+                    <img class="hero-btn-icon" src="/public/img/icon/heart_icon.png" alt="heart_icon">                
+
+                </span>               
                 <span class="hero-btn-gap"></span>
                 <span class="hero-btn-label">Jetzt spenden</span>
             </button>
