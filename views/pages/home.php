@@ -6,6 +6,18 @@ $pageTitle = 'Startseite';
 <main>
     <?php include __DIR__ . '/../template/hero-banner.php'; ?>
 
+    <div class="content-container" id="landing-page-content">
+        <h2>Überschrift Einstieg</h2>
+        <p>
+            Das Industriedenkmal der ehemaligen Zeche Blumenthal 7 verwandelt sich Schritt für Schritt zu einem
+            lebendigen Ort für eine bunte Palette an interessierten Menschen.
+        </p>
+        <br>
+        <p>
+            <b>Auf vielfältige Art und Weise darfst auch du dich gerne einbringen.</b>
+        </p>   
+    </div>
+
     <div class=teaser-container>
         <section id="teaser">
             <div id="teaser-box1" class="teaser-box">
