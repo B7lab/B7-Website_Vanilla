@@ -68,7 +68,9 @@
                 <p>&copy; 2025 Blumenthal 7 e.V. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
-    <script>
+    <script src="public/libs/jquery.js"></script>
+    <script src="public/libs/gsap/gsap.min.js"></script>
+    <script src="public/js/main.js"></script>
     function toggleMenu() {
         const menu = document.getElementById('mainMenu');
         menu.classList.toggle('open');
