@@ -1,13 +1,8 @@
 <?php
 
-$pageTitle = "Startseite";
-include 'php/include/header.php';
+$pageTitle = 'Startseite';
 
 ?>
-
-<!--<h1>Willkommen</h1>
-<p>Hallo <?= $name ?? 'Gast' ?>!</p>-->
-
 <main>
     <!-- Banner -->
     <div id="hero-banner">
@@ -23,7 +18,7 @@ include 'php/include/header.php';
                 <span class="hero-btn-label">Jetzt spenden</span>
             </button>
     </div>
-        <img src="assets/logo/logo4.png" alt="B7 Logo" id="hero-banner-logo">
+        <img src="/public/logo/logo4.png" alt="B7 Logo" id="hero-banner-logo">
         <div class="color-band" id="hero-sub-banner-1">
             <p>Die Zeche</p>
         </div>
@@ -70,4 +65,3 @@ include 'php/include/header.php';
 </main>
 
 
-<?php include 'php/include/footer.php'; ?>

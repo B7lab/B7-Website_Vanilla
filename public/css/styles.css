@@ -15,7 +15,6 @@
 
 /* CSS-Reset */
 * {
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -363,7 +362,7 @@ section {
 /* Hero-Banner */
 
 #hero-banner {
-    background-image: url('../assets/img/hero-banner.jpg');
+    background-image: url('../img/hero-banner.jpg');
     background-size: cover;
     background-position: center;
     height: 50vh; 
@@ -517,27 +516,27 @@ section {
 }
 
 #teaser-box1 {
-    background-image: url('../assets/img/teaser1.jpg');
+    background-image: url('../img/teaser/teaser1.jpg');
 }
 
 #teaser-box2 {
-    background-image: url('../assets/img/teaser2.jpg');
+    background-image: url('../img/teaser/teaser2.jpg');
 }
 
 #teaser-box3 {
-    background-image: url('../assets/img/teaser3.jpg');
+    background-image: url('../img/teaser/teaser3.jpg');
 }
 
 #teaser-box4 {
-    background-image: url('../assets/img/teaser4.jpg');
+    background-image: url('../img/teaser/teaser4.jpg');
 }
 
 #teaser-box5 {
-    background-image: url('../assets/img/teaser5.jpg');
+    background-image: url('../img/teaser/teaser5.jpg');
 }
 
 #teaser-box6 {
-    background-image: url('../assets/img/teaser6.jpg');
+    background-image: url('../img/teaser/teaser6.jpg');
 }
 
 /* ----------------- */
@@ -545,7 +544,7 @@ section {
 /* ----------------- */
 
 #site-banner {
-    background-image: url('../assets/img/site-banner.jpg');
+    background-image: url('../img/site-banner.jpg');
     background-size: cover;
     background-position: center;
     height: 15vh; 
