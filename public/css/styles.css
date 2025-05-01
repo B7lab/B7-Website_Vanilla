@@ -440,6 +440,8 @@ section {
 #landing-page-content {
     padding: 20px;
     background-color: var(--dunkelgrau);
+    color:white;
+
     box-shadow: none;
 }
 
