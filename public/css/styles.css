@@ -19,16 +19,16 @@
     box-sizing: border-box;
 }
 
+
 /* HTML und Body */
 html, body {
     font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 16px;
-    color: white;
     background-color: var(--dunkelgrau);
+    color: white;
+
     line-height: 1.6;
 }
-
-
 
 /* Links */
 
@@ -543,13 +543,13 @@ section {
 }
 
 #page-banner-content h1 {
-    font-size: 2rem;
+    font-size: 0.2rem;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 #page-banner-content p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 400;
 }
 
@@ -565,7 +565,7 @@ section {
     justify-content: center;
     align-items: center;
     color: var(--kohlenschwarz);
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     font-weight: bold;
 }
