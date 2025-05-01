@@ -19,3 +19,11 @@ $mainRouter->map('GET', '/impressum', function() {
 $mainRouter->map('GET', '/datenschutz', function() {
     render('main/datenschutz');
 });
+
+$mainRouter->map('GET', '/mitglied-werden', function() {
+    render('main/mitglied-werden');
+});
+
+$mainRouter->map('GET', '/spenden', function() {
+    render('main/spenden');
+});

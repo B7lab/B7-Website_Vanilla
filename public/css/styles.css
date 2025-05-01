@@ -9,7 +9,7 @@
     --hellgrau: #555;
     --dunkelgrau: #3c3c3c;
     --kohlenschwarz: #000;
-    --waschkauenweiss: #fff;
+    --waschkauenweiss: #e1e1e1;
 }
 
 /* CSS-Reset */
@@ -23,20 +23,12 @@
 html, body {
     font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-size: 16px;
-    color: var(--waschkauenweiss);
+    color: white;
     background-color: var(--dunkelgrau);
     line-height: 1.6;
 }
 
-.content-container {
-    max-width: 1200px;
-    background-color: var(--hellgrau);
-    margin: 0 auto;
-    padding: 75px 20px;
-    text-align: center;
-    font-size: 1.3rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);;
-}
+
 
 /* Links */
 
@@ -112,7 +104,7 @@ section {
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    background-color: var(--waschkauenweiß);
+    background-color: var(--dunkelgrau);
     width: 100%;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -139,7 +131,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--waschkauenweiss);
+    background-color: white;
     padding: 5px 15px;
     margin: 0 20px;
     gap: 20px; 
@@ -179,7 +171,7 @@ section {
 .burger-menu div {
     width: 100%;
     height: 4px;
-    background-color: var(--waschkauenweiss);
+    background-color: white;
     transition: all 0.3s ease;
 }
 
@@ -239,7 +231,7 @@ section {
 
 #main-footer {
     background-color: var(--hellgrau);
-    color: var(--waschkauenweiss);
+    color: white;
     padding: 20px 0;
     text-align: center;
 }
@@ -297,68 +289,6 @@ section {
     opacity: 0.8;
 }
 
-/* Text-block */
-#text-block {
-    background-color: var(--hellgrau);
-    color: var(--waschkauenweiss);
-    padding: 40px 20px;
-    text-align: left;
-}
-
-#text-block .container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-#text-block h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-#text-block h2::after {
-    content: "";
-    display: block;
-    width: 62%; /* Goldener Schnitt */
-    height: 3px;
-    background: var(--technikblau);
-    margin-top: 10px;
-    transform: skewX(-2deg); /* Geneigt wie Farbbänder */
-}
-
-#text-block h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    position: relative;
-}
-
-#text-block h3::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -8px; 
-    width: 62%; 
-    height: 3px;
-    background: var(--zukunftsgruen);
-}
-
-#text-block p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-#text-block ul {
-    list-style: disc;
-    margin-left: 20px;
-    padding-left: 20px;
-}
-
-#text-block ul li {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
 /* ------------ */
 /* LANDING PAGE */
 /* ------------ */
@@ -408,8 +338,29 @@ section {
     z-index: 10;
 }
 
+.banner-button {
+    background-color: transparent !important;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.3s ease;
+    padding: 0;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    color: var(--kohlenschwarz);
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
 
-#join-button, #donate-button {
+}
+
+.banner-button:hover {
+    text-decoration: none;
+    background-color: var(--technikblau)
+}
+
+/* #join-button, #donate-button {
     background-color: transparent !important;
     display: flex;
     align-items: center;
@@ -421,7 +372,7 @@ section {
     transition: background-color 0.3s ease;
     padding: 0;
     height: 30px;
-}
+} */
 
 .banner-btn-icon {
     background-color: var(--b7-gelb);
@@ -525,7 +476,7 @@ section {
     width: 100%;
     height: 100%;
     text-decoration: none;
-    color: var(--waschkauenweiss);
+    color: white;
     position: absolute;
     top: 0;
     left: 0;
@@ -634,72 +585,65 @@ section {
     font-weight: bold;
 }
 
+/* ---------------- */
+/* ---CONTENT--- */
+/* ---------------- */
 
-/* ------------------ */
-/* ---Partner Site--- */
-/* ------------------ */
-
-#partner-section {
-    text-align: center;
-    margin: 40px 0;
+.content-container {
+    max-width: 1200px;
+    background-color: var(--waschkauenweiss);
+    margin: 0 auto;
+    padding: 50px 50px;
+    position: relative;
+    overflow: visible;
+    color: var(--kohlenschwarz);
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);;
 }
 
-#partner-section h1 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: var(--waschkauenweiss);
+.content-container ul {
+    margin-left: 5%
 }
 
-.partner-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+.content-container li::marker {
+    color: black; /* Fallback */
+  }
+  
+  .marker-blau::marker {
+    color: var(--technikblau);
+  }
+  
+  .marker-rot::marker {
+    color: var(--signalrot);
+  }
+  
+  .marker-gelb::marker {
+    color: var(--b7-gelb);
+  }
+  
+  .marker-gruen::marker {
+    color: var(--zukunftsgrün);
+  }
+  
+
+.color-box {
+    display: inline-block;
+    position: relative;
+    left: -10px;
+    top: 0.2rem;
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.partner-box {
-    display: flex;
-    align-items: center;
-    background-color: var(--hellgrau);
-    color: var(--waschkauenweiss);
-    text-decoration: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 10px;
-}
-
-.partner-box:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.partner-logo {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-}
-
-.partner-logo img {
-    max-width: 100%;
-    max-height: 80px;
-    object-fit: contain;
-}
-
-.partner-name {
-    flex: 2;
-    font-size: 1.2rem;
-    font-weight: bold;
+.block-heading {
     text-align: left;
-    padding-left: 10px;
-    color: var(--waschkauenweiss);
+    position: relative;
+    padding-left: 0%;
+    margin-left: -52px
+
 }
-
-
-/* ---------------- */
-/* ---BLOG-POSTS--- */
-/* ---------------- */
-
 
 /* ----------------- */
 /* RESPONSIVE DESIGN */
