@@ -2,84 +2,236 @@ import * as THREE from "../libs/three.js/build/three.module.min.js";
 
 import { OrbitControls } from "../libs/three.js/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "../libs/three.js/examples/jsm/loaders/GLTFLoader.js";
-import { RGBELoader } from "../libs/three.js/examples/jsm/loaders/RGBELoader.js";
 
-// Canvas
-const canvas = document.querySelector("canvas.webgl");
-const scene = new THREE.Scene();
-let renderer;
-let camera;
+    // Szene, Kamera, Renderer
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xe0e0e0);
+    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.set(5, 5, 10);
 
-init(); //our setup
-render(); //the update loop
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
 
-function init() {
-  //setup the camera
-  camera = new THREE.PerspectiveCamera(
-    45,
-    window.innerWidth / window.innerHeight,
-    0.25,
-    20
-  );
-  camera.position.set(-1.8, 0.6, 2.7);
+    // Licht
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambientLight);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
+    directionalLight.position.set(10, 10, 10);
+    scene.add(directionalLight);
 
-  //load and create the environment
-  new RGBELoader()
-    .setDataType(THREE.FloatType)
-    .load(
-      "/public/img/werkstatt.hdr",
-      function (texture) {
-        const pmremGenerator = new THREE.PMREMGenerator(renderer);
-        pmremGenerator.compileEquirectangularShader();
-        const envMap = pmremGenerator.fromEquirectangular(texture).texture;
+    // Modell laden
+    const collidables = [];
 
-        scene.background = envMap; //this loads the envMap for the background
-        scene.environment = envMap; //this loads the envMap for reflections and lighting
+    const loader = new GLTFLoader();
+    loader.load('/public/img/ba1.glb', function (gltf) {
+      //gltf.scene.rotation.z = -Math.PI / 2; // Modell um 90° um X-Achse drehen
 
-        texture.dispose(); //we have envMap so we can erase the texture
-        pmremGenerator.dispose(); //we processed the image into envMap so we can stop this
+      gltf.scene.traverse((child) => {
+        if (child.isMesh) {
+          child.geometry.computeBoundingBox(); // wichtig
+          collidables.push(child);
+        }
+      });
+
+      const model = gltf.scene;
+      scene.add(model);
+    
+    }, undefined, function (error) {
+      console.error('Fehler beim Laden:', error);
+    });
+
+    // Steuerung
+    //const controls = new OrbitControls(camera, renderer.domElement);
+    //controls.enableDamping = true;
+
+    const move = {
+      forward: false,
+      backward: false,
+      left: false,
+      right: false,
+      rotLeft: false,
+      rotRight: false,
+    };
+    
+    //let speed = 0.1;
+    //let rotSpeed = 0.03;
+    
+    document.addEventListener('keydown', (e) => {
+      switch (e.code) {
+        case 'KeyW': move.forward = true; break;
+        case 'KeyS': move.backward = true; break;
+        case 'KeyA': move.left = true; break;
+        case 'KeyD': move.right = true; break;
+        case 'ArrowLeft': move.rotLeft = true; break;
+        case 'ArrowRight': move.rotRight = true; break;
       }
-    );
+    });
+    
+    document.addEventListener('keyup', (e) => {
+      switch (e.code) {
+        case 'KeyW': move.forward = false; break;
+        case 'KeyS': move.backward = false; break;
+        case 'KeyA': move.left = false; break;
+        case 'KeyD': move.right = false; break;
+        case 'ArrowLeft': move.rotLeft = false; break;
+        case 'ArrowRight': move.rotRight = false; break;
+      }
+    });
 
-  // load the model
-  const loader = new GLTFLoader();
-  loader.load(
-    "/public/img/IronMan.gltf",
-    function (gltf) {
-      scene.add(gltf.scene);
-      render(); //render the scene for the first time
-    }
-  );
+    // Animation
+    /*function animate() {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
+    }*/
+      const player = new THREE.Object3D();
+      player.position.set(0, -10, 0);
+      scene.add(player);
+      
+      // PitchObject für vertikale Kamerabewegung
+      const pitchObject = new THREE.Object3D();
+      pitchObject.position.set(0, 1.5, 0); // Augenhöhe
+      player.add(pitchObject);
 
-  //setup the renderer
-  renderer = new THREE.WebGLRenderer({ antialias: true, canvas: canvas });
-  renderer.setPixelRatio(window.devicePixelRatio);
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.toneMapping = THREE.ACESFilmicToneMapping; //added contrast for filmic look
-  renderer.toneMappingExposure = 1;
-  renderer.outputEncoding = THREE.sRGBEncoding; //extended color space for the hdr
+      // Kamera im PitchObject
+      //const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.set(0, 0, 0);
+      pitchObject.add(camera);
+      
+      let keys = { forward: false, backward: false };
+      let yaw = 0;      
+      let pitch = 0;
+      const pitchLimit = Math.PI / 2 - 0.1; // max. ±90° mit etwas Spielraum
+      
+      let lastMouseX = null;
+      let lastMouseY = null;
+      let isHovering = false;
+      const speed = 4; // <-- Schneller!
+      const forwardSpeed = 0.2; // für W/S
+      const sidespeed = 0.05;  // für A/D
+      
+      // Tastatursteuerung
+      document.addEventListener('keydown', (e) => {
+        if (e.code === 'KeyW') keys.forward = true;
+        if (e.code === 'KeyS') keys.backward = true;
+        if (e.code === 'KeyA') keys.left = true;
+        if (e.code === 'KeyD') keys.right = true;
+      });
+      document.addEventListener('keyup', (e) => {
+        if (e.code === 'KeyW') keys.forward = false;
+        if (e.code === 'KeyS') keys.backward = false;
+        if (e.code === 'KeyA') keys.left = false;
+        if (e.code === 'KeyD') keys.right = false;
+      });
+      
+      // Mausbewegung über dem Canvas
+      /*renderer.domElement.addEventListener('mouseenter', () => {
+        isHovering = true;
+      });
 
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.addEventListener("change", render); // use if there is no animation loop to render after any changes
-  controls.minDistance = 2;
-  controls.maxDistance = 10;
-  controls.target.set(0, 0.8, -0.5);
-  controls.update();
 
-  window.addEventListener("resize", onWindowResize);
-}
+      renderer.domElement.addEventListener('mouseleave', () => {
+        isHovering = false;
+        lastMouseX = null;
+        lastMouseY = null;
+      });
 
-function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
 
-  renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.domElement.addEventListener('mousemove', (e) => {
+        if (!isHovering) return;
 
-  render();
-}
+        if (lastMouseX !== null && lastMouseY !== null) {
+          const deltaX = e.clientX - lastMouseX;
+          const deltaY = e.clientY - lastMouseY;
+      
+          yaw -= deltaX * 0.005;
+          pitch -= deltaY * 0.005;
+          pitch = Math.max(-pitchLimit, Math.min(pitchLimit, pitch)); // begrenzen
+      
+          player.rotation.y = yaw;
+          pitchObject.rotation.x = pitch;
+        }
+        lastMouseX = e.clientX;
+        lastMouseY = e.clientY;
+      });*/
 
-//
+      window.addEventListener('mousemove', (e) => {
+        if (lastMouseX !== null && lastMouseY !== null) {
+          const deltaX = e.clientX - lastMouseX;
+          const deltaY = e.clientY - lastMouseY;
+      
+          yaw -= deltaX * 0.005;
+          pitch -= deltaY * 0.005;
+      
+          const pitchLimit = Math.PI / 2 - 0.1;
+          pitch = Math.max(-pitchLimit, Math.min(pitchLimit, pitch));
+      
+          player.rotation.y = yaw;
+          pitchObject.rotation.x = pitch;
+        }
+      
+        lastMouseX = e.clientX;
+        lastMouseY = e.clientY;
+      });
+      
 
-function render() {
-  renderer.render(scene, camera);
-}
+      function checkCollision(position) {
+        const playerBox = new THREE.Box3().setFromCenterAndSize(
+          position.clone().add(new THREE.Vector3(0, 1, 0)), // Y etwas anheben, je nach Modellhöhe
+          new THREE.Vector3(1, 2, 1) // Breite, Höhe, Tiefe des Spielers anpassen
+        );
+      
+        for (const obj of collidables) {
+          const objectBox = obj.geometry.boundingBox.clone();
+          objectBox.applyMatrix4(obj.matrixWorld);
+      
+          if (playerBox.intersectsBox(objectBox)) {
+            return true; // Kollidiert
+          }
+        }
+      
+        return false;
+      }
+
+      const raycaster = new THREE.Raycaster();
+      const collisionDistance = 0.5;
+      
+      
+      // Animation / Spiel-Loop
+      function animate() {
+        requestAnimationFrame(animate);
+      
+        const dir = new THREE.Vector3();
+      
+        if (keys.forward) dir.z -= forwardSpeed;
+        if (keys.backward) dir.z += forwardSpeed;
+        if (keys.left) dir.x -= sidespeed;
+        if (keys.right) dir.x += sidespeed;
+      
+        // Kollisionsabfrage
+        if (dir.length() > 0) {
+          dir.normalize().applyEuler(player.rotation);
+      
+          const nextPosition = player.position.clone().addScaledVector(dir, speed);
+      
+          if (!checkCollision(nextPosition)) {
+            player.position.copy(nextPosition);
+          }
+        }
+      
+        camera.position.set(0, 1, 2); // Abstand von hinten
+        camera.lookAt(player.position);
+      
+        renderer.render(scene, camera);
+      }
+      animate();
+      
+
+
+    // Responsive
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
