@@ -41,8 +41,8 @@ $pageTitle = 'Startseite';
                 </a>
             </div>
             <div id="teaser-box5" class="teaser-box">
-                <a href="#">
-                    <div class="teaser-box-content">Teaser 5</div>
+                <a href="/area/rundgang">
+                    <div class="teaser-box-content">Virtueller Rundgang</div>
                 </a>
             </div>
             <div id="teaser-box6" class="teaser-box">

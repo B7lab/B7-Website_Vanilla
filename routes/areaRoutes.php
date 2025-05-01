@@ -22,3 +22,7 @@ $areaRouter->map('GET', '/teaser5', function() {
 $areaRouter->map('GET', '/kooperationspartner_innen', function() {
     render('area/kooperationspartner_innen');
 });
+
+$areaRouter->map('GET', '/rundgang', function() {
+    render('area/virtuellerRundgang');
+});

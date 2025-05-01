@@ -72,6 +72,7 @@
     <script src="public/libs/gsap/gsap.min.js"></script>
     <script src="public/js/main.js"></script>
     <script>
+        
     // Burger Menu Toggle
     function toggleMenu() {
         const menu = document.getElementById('mainMenu');
@@ -82,7 +83,19 @@
                 this.classList.toggle('open');
             });
         });
-    }
+
+        /* JQuery Beispiel für das Toggle des Menüs
+        $('#mainMenu').toggleClass('open'); 
+                ^           ^
+                |           |
+            selector     toggle class
+            wie          function
+            in CSS
+        
+        Funktionen in JQuery sind sehr gut dokumentiert und einfach zu finden.
+        https://api.jquery.com/toggleclass/
+        */
+                        |
     </script>
 </body>
 </html>
