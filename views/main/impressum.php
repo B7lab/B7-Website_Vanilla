@@ -1,19 +1,46 @@
-<h2 class="wp-block-heading" id="angaben-gemass-5-tmg"><strong>Angaben gemäß § 5 DDG</strong></h2>
 
-<p>Blumenthal 7 e.V.<br>Westcharweg 101<br>45659 Recklinghausen </p>
-<p>Telefon:  </p>
+<main>
+    <?php
+        $pageTitle = "Impressum";
+        $pageSubtitle = "";
+        include __DIR__ . '/../template/page-banner.php'; 
+    ?>
+    <div class="content-container">
+        <h2 class="block-heading">Angaben gemäß § 5 DDG</h2>
+        <p>
+            Blumenthal 7 e.V.</br>
+            Westcharweg 101</br>
+            45659 Recklinghausen
+        </p>
+        
+        <p>
+            Telefon:</br>
+            E-Mail:
+        </p>
 
-<figure class="wp-block-image size-large"><img src="https://blumenthal7.de/wp-content/uploads/2021/07/image.png" alt="" class="wp-image-1116"/></figure>
+        <h3>Vertretungsberechtige Personen</h3>
+            <ul>
+                <li>Stephan Widera, Vorstand</li>
+                <li>Erik Schare, Vorstand</li>
+                <li>Philip Barg, Vorstand</li>
+                <li>Jochen [NACHNAME ERGÄNZEN], Vorstand</li>            
+                <li>Victor Heilmann, Vorstand</li>
+                <li>Stefan Hoppe, Vorstand</li>
+            </ul>
 
-<p><br>E-Mail: </p>
 
-<figure class="wp-block-image"><img src="https://blumenthal7.de/wp-content/uploads/2020/09/infob7.png" alt="" class="wp-image-731"/></figure>
+        <h2 class="block-heading">Eintragung in das Vereinsregister</h2>
+        <br>
+            Registergericht: Amtsgericht Recklinghausen</br>
+            Registernummer: VR 2881
+        </p>
 
-<p><strong>Vertretungsberechtige Personen</strong></p>
-<p>Stephan Widera, Vorstand<br>Erik Schare, Vorstand<br>Philip Barg, Vorstand<br>Victor Heilmann, Vorstand</p>
+        <h2 class="block-heading">V.i.S.d § 55 Abs. 2 RStV</h2>
+        <br>
+            Erik Schare</br>
+            Westcharweg 101</br>
+            45659 Recklinghausen
+        </p>
+    </div>
+</main>
 
-<h2 class="wp-block-heading" id="eintragung-in-das-vereinsregister"><strong>Eintragung in das Vereinsregister</strong></h2>
-<p>Registergericht: Amtsgericht Recklinghausen<br>Registernummer: VR 2881</p>
-
-<h2 class="wp-block-heading" id="v-i-s-d-55-abs-2-rstv"><strong>V.i.S.d § 55 Abs. 2 RStV</strong></h2>
-<p>Erik Schare<br>Westcharweg 101<br>45659 Recklinghausen</p>

@@ -1,6 +1,10 @@
 {
     "github.copilot.enable": {
+<<<<<<< HEAD
+        "*": false,
+=======
         "*": true,
+>>>>>>> 9c7bff073d007b063e1eb503023efc700fd23a09
         "plaintext": false,
         "markdown": false,
         "scminput": false
