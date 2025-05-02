@@ -25,7 +25,25 @@ import { GLTFLoader } from "../libs/three.js/examples/jsm/loaders/GLTFLoader.js"
 
     const loader = new GLTFLoader();
     loader.load('/public/img/ba1.glb', function (gltf) {
-      //gltf.scene.rotation.z = -Math.PI / 2; // Modell um 90° um X-Achse drehen
+      const model = gltf.scene;
+
+      // 1. Modell-Ausrichtung (falls es auf dem Kopf steht)
+      model.rotation.x = Math.PI;
+
+      // 2. Modell-Position relativ zum Spieler:
+      // Direkt 3 Einheiten vor dem Spieler
+      const distance = 3;
+      const direction = new THREE.Vector3(180, 0, 0); // Blickrichtung
+      direction.applyEuler(player.rotation); // Aktuelle Ausrichtung des Spielers
+
+      // Zielposition berechnen
+      const position = new THREE.Vector3().copy(player.position).addScaledVector(direction, distance);
+
+      // In Augenhöhe platzieren (z. B. +1.5 auf Y)
+      position.y += -50; //Kopfhöhe
+      position.x += 90;
+      position.z += -280;
+      
 
       gltf.scene.traverse((child) => {
         if (child.isMesh) {
@@ -34,7 +52,7 @@ import { GLTFLoader } from "../libs/three.js/examples/jsm/loaders/GLTFLoader.js"
         }
       });
 
-      const model = gltf.scene;
+      model.position.copy(position);
       scene.add(model);
     
     }, undefined, function (error) {
@@ -107,7 +125,7 @@ import { GLTFLoader } from "../libs/three.js/examples/jsm/loaders/GLTFLoader.js"
       let lastMouseX = null;
       let lastMouseY = null;
       let isHovering = false;
-      const speed = 4; // <-- Schneller!
+      const speed = 2; // <-- Schneller!
       const forwardSpeed = 0.2; // für W/S
       const sidespeed = 0.05;  // für A/D
       
@@ -125,6 +143,20 @@ import { GLTFLoader } from "../libs/three.js/examples/jsm/loaders/GLTFLoader.js"
         if (e.code === 'KeyD') keys.right = false;
       });
       
+
+      // Maussteuerung Pointer Lock
+      renderer.domElement.addEventListener('click', () => {
+        renderer.domElement.requestPointerLock();
+      });
+
+
+      document.addEventListener('pointerlockchange', () => {
+        if (document.pointerLockElement === renderer.domElement) {
+          document.addEventListener('mousemove', onMouseMove, false);
+        } else {
+          document.removeEventListener('mousemove', onMouseMove, false);
+        }
+      });
       // Mausbewegung über dem Canvas
       /*renderer.domElement.addEventListener('mouseenter', () => {
         isHovering = true;
@@ -158,14 +190,17 @@ import { GLTFLoader } from "../libs/three.js/examples/jsm/loaders/GLTFLoader.js"
 
       window.addEventListener('mousemove', (e) => {
         if (lastMouseX !== null && lastMouseY !== null) {
-          const deltaX = e.clientX - lastMouseX;
-          const deltaY = e.clientY - lastMouseY;
+          //const deltaX = e.clientX - lastMouseX;
+          //const deltaY = e.clientY - lastMouseY;
+          const deltaX = e.movementX || 0;
+          const deltaY = e.movementY || 0;
       
           yaw -= deltaX * 0.005;
           pitch -= deltaY * 0.005;
       
           const pitchLimit = Math.PI / 2 - 0.1;
-          pitch = Math.max(-pitchLimit, Math.min(pitchLimit, pitch));
+          pitch = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, pitch));
+          //pitch = Math.max(-pitchLimit, Math.min(pitchLimit, pitch));
       
           player.rotation.y = yaw;
           pitchObject.rotation.x = pitch;
@@ -174,20 +209,29 @@ import { GLTFLoader } from "../libs/three.js/examples/jsm/loaders/GLTFLoader.js"
         lastMouseX = e.clientX;
         lastMouseY = e.clientY;
       });
-      
+
+
+      // Kollision deaktivieren (beispielsweise durch 'C'-Taste)
+      document.addEventListener('keydown', (e) => {
+        if (e.code === 'KeyC') {
+          collisionEnabled = !collisionEnabled; // Schaltet zwischen aktiviert und deaktiviert um
+          console.log(`Kollisionserkennung: ${collisionEnabled ? 'Aktiviert' : 'Deaktiviert'}`);
+        }
+      } );
 
       function checkCollision(position) {
         const playerBox = new THREE.Box3().setFromCenterAndSize(
           position.clone().add(new THREE.Vector3(0, 1, 0)), // Y etwas anheben, je nach Modellhöhe
           new THREE.Vector3(1, 2, 1) // Breite, Höhe, Tiefe des Spielers anpassen
         );
-      
-        for (const obj of collidables) {
-          const objectBox = obj.geometry.boundingBox.clone();
-          objectBox.applyMatrix4(obj.matrixWorld);
-      
-          if (playerBox.intersectsBox(objectBox)) {
-            return true; // Kollidiert
+        if(!collisionEnabled) {
+          for (const obj of collidables) {
+            const objectBox = obj.geometry.boundingBox.clone();
+            objectBox.applyMatrix4(obj.matrixWorld);
+            
+            if (playerBox.intersectsBox(objectBox)) {
+              return true; // Kollidiert
+            }
           }
         }
       
@@ -196,7 +240,8 @@ import { GLTFLoader } from "../libs/three.js/examples/jsm/loaders/GLTFLoader.js"
 
       const raycaster = new THREE.Raycaster();
       const collisionDistance = 0.5;
-      
+      let collisionEnabled = true; // Standardmäßig aktiviert
+
       
       // Animation / Spiel-Loop
       function animate() {
@@ -215,9 +260,11 @@ import { GLTFLoader } from "../libs/three.js/examples/jsm/loaders/GLTFLoader.js"
       
           const nextPosition = player.position.clone().addScaledVector(dir, speed);
       
+        
           if (!checkCollision(nextPosition)) {
             player.position.copy(nextPosition);
           }
+          
         }
       
         camera.position.set(0, 1, 2); // Abstand von hinten
