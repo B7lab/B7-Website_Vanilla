@@ -5,7 +5,7 @@ $pageTitle = 'Startseite';
 ?>
 <main>
 <?php include __DIR__ . '/../template/hero-banner.php'; ?>
-<?php include __DIR__ . '/../template/animated_b7logo.php'; ?>
+<?php //include __DIR__ . '/../template/animated_b7logo.php'; ?>
 
     <div class="content-container" id="landing-page-content">
         <h2>Überschrift Einstieg</h2>
