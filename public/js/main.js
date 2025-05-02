@@ -29,6 +29,38 @@ $(document).ready(function () {
         const markerClass = markerClasses[index % markerClasses.length];
         $(this).addClass(markerClass);
     });
+
+
+    // Banner Button become Member and Donate
+
+    let hideTimeout;
+
+    $("#join-button").hover(
+        function () {
+           clearTimeout(hideTimeout);
+            $(".banner-btn-label").fadeIn(500);
+        },
+        function () {
+           hideTimeout = setTimeout(function () {
+                $(".banner-btn-label").fadeOut(500);
+            }, 3000);
+        }
+    );   
+    
+    $("#donate-button").hover(
+        function () {
+           clearTimeout(hideTimeout);
+            $(".banner-btn-label").fadeIn(500);
+        },
+        function () {
+           hideTimeout = setTimeout(function () {
+                $(".banner-btn-label").fadeOut(500);
+            }, 3000);
+        }
+    );
+
+    $(".banner-btn-label").fadeOut(500);
+
 });
 
 
