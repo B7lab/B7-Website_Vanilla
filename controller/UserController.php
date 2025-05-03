@@ -62,10 +62,13 @@ function showDashboard($id) {
     // Termine des Nutzers laden
     $stmt = $pdo->prepare("SELECT * FROM appointments WHERE user_id = ? ORDER BY start ASC");
     $stmt->execute([$id]);
-    $appointments = $stmt->fetch(PDO::FETCH_ASSOC);
-
+    $appointments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+/*
+    echo '<pre>';
+    var_dump($appointments);
+    echo '</pre>';
+*/
     render('user/dashboard', [
-        'title' => 'Benutzerprofil',
         'user' => $user,
         'appointments' => $appointments
     ]);

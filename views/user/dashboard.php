@@ -12,10 +12,10 @@
         <ul>
         <?php foreach ($appointments as $appt): ?>
             <li>
-                <strong><?= htmlspecialchars($appt['title']) ?></strong><br>
-                <?= date('d.m.Y H:i', strtotime($appt['start'])) ?> –
-                <?= date('H:i', strtotime($appt['end'])) ?><br>
-                <?= nl2br(htmlspecialchars($appt['description'])) ?>
+                <strong><?= htmlspecialchars($appt['title'] ?? '(kein Titel)') ?></strong><br>
+                <?= isset($appt['start']) ? date('d.m.Y H:i', strtotime($appt['start'])) : 'unbekannt' ?> –
+                <?= isset($appt['end']) ? date('H:i', strtotime($appt['end'])) : 'unbekannt' ?><br>
+                <?= nl2br(htmlspecialchars($appt['description'] ?? '')) ?>
             </li>
         <?php endforeach; ?>
         </ul>
