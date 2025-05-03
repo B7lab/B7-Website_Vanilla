@@ -61,6 +61,42 @@ $(document).ready(function () {
 
     $(".banner-btn-label").fadeOut(500);
 
+    // Burger Menu Toggle
+    function toggleMenu() {
+        const menu = document.getElementById('mainMenu');
+        menu.classList.toggle('open');
+        document.querySelectorAll('.has-submenu').forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.classList.toggle('open');
+            });
+        });
+    }    
+
+    $(".burger-menu").click(function(){
+        toggleMenu();
+    });
+
+    $(".burger-menu").hover(
+        function () {
+            toggleMenu();
+        },
+        function () {
+            //toggleMenu();
+        }
+    );
+
+    $("#mainMenu").hover(
+        function () {
+            //toggleMenu();
+        },
+        function () {
+            toggleMenu();
+        }
+    );
+
+
+
 });
 
 

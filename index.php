@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -27,7 +30,6 @@ function render($view, $data = []) {
 
     include __DIR__ . "/views/template/layout.php";
 }
-
 
 require __DIR__ . '/routes/mainRoutes.php';
 require __DIR__ . '/routes/areaRoutes.php';

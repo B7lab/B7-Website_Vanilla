@@ -23,7 +23,7 @@
         </div>
 
         <div id="menu-container">
-            <div class="burger-menu" onclick="toggleMenu()">
+            <div class="burger-menu">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -31,6 +31,12 @@
 
             <nav class="menu" id="mainMenu">
                 <ul class="menu-list">
+                    <?php if (isset($_SESSION['username'])): ?>
+                        <li>Eingeloggt als <?php echo htmlspecialchars($_SESSION['username']); ?> | <a href="/user/logout">Logout</a></li>
+                    <?php else: ?>
+                        <li><a href="/user/login" style="color: red">Login</a></li> 
+                        <li><a href="/user/register" style="color: red">Registrieren</a></li>
+                    <?php endif; ?>
                     <li><a href="#">Start</a></li>
                     <li><a href="#">Über uns</a></li>
                     <li><a href="#">Partner</a></li>
@@ -71,20 +77,5 @@
     <script src="/public/libs/jquery.js"></script>
     <script src="/public/libs/gsap/gsap.min.js"></script>
     <script src="/public/js/main.js"></script>
-
-    <script>
-        
-    // Burger Menu Toggle
-    function toggleMenu() {
-        const menu = document.getElementById('mainMenu');
-        menu.classList.toggle('open');
-        document.querySelectorAll('.has-submenu').forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
-                this.classList.toggle('open');
-            });
-        });
-    }         
-    </script>
 </body>
 </html>

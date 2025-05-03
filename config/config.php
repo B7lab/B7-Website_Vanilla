@@ -5,7 +5,7 @@ try {
     $db = 'b7_website'; 
     $user = 'webuser';
     $pass = 'af5jtcs3Gzwr';
-    $charset = 'utf8mb4'; 
+    $charset = 'utf8'; 
     
     $emailFrom = 'admin@warehouse.com';
     $useInternalMailer = false;
@@ -19,7 +19,7 @@ try {
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         PDO::ATTR_EMULATE_PREPARES => false,
     ]);
-
+    $conn->exec("SET NAMES 'utf8'");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if($conn) {
