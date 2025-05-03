@@ -1,4 +1,6 @@
-create database IF NOT EXISTS b7;
+create database IF NOT EXISTS b7
+CHARACTER SET utf8
+COLLATE utf8_general_ci;
 
 use b7;
 
@@ -13,6 +15,8 @@ CREATE TABLE if not exists users (
     password_hash VARCHAR(255) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+ALTER TABLE users CONVERT TO CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE if not exists skills (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -104,3 +108,7 @@ INSERT INTO appointments (user_id, title, description, start, end)
 VALUES
 (1, 'Arzttermin', 'Hausarzt Dr. Müller', '2025-05-05 09:00:00', '2025-05-05 09:30:00'),
 (1, 'Teammeeting', 'Zoom-Link folgt per Mail', '2025-05-06 14:00:00', '2025-05-06 15:00:00');
+
+UPDATE users
+SET profile_description = 'Tüftler aus dem Ruhrgebiet'  -- Neuer Text
+WHERE id = 1;
