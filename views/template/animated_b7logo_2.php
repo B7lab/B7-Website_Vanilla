@@ -13,7 +13,9 @@
         pointer-events: none;
     }
 </style>
+
 <canvas id="Anim-b7-logo"></canvas>
+
 <script>
     const canvas = document.getElementById('Anim-b7-logo');
     const ctx = canvas.getContext('2d');
