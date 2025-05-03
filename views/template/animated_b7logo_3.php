@@ -44,7 +44,7 @@
         }
         draw(context) {
             context.drawImage(this.image, this.x + this.slideX, this.y + this.slideY, this.width, this.height, this.x, this.y, this.width, this.height);
-            //context.strokeRect(this.x, this.y, this.width, this.height);
+            context.strokeRect(this.x, this.y, this.width, this.height);
         }
         update() {
             this.slideX = Math.random() * 10;
