@@ -32,10 +32,10 @@
             <nav class="menu" id="mainMenu">
                 <ul class="menu-list">
                     <?php if (isset($_SESSION['username'])): ?>
-                        <li>Eingeloggt als <?php echo htmlspecialchars($_SESSION['username']); ?> | <a href="/user/logout" style="color: red">Logout</a></li>
+                        <li>Eingeloggt als <?php echo htmlspecialchars($_SESSION['username']); ?> | <a href="/auth/logout" style="color: red">Logout</a></li>
                     <?php else: ?>
-                        <li><a href="/user/login" style="color: red">Login</a></li> 
-                        <li><a href="/user/register" style="color: red">Registrieren</a></li>
+                        <li><a href="/auth/login" style="color: red">Login</a></li> 
+                        <li><a href="/auth/register" style="color: red">Registrieren</a></li>
                     <?php endif; ?>
                     <li><a href="#">Start</a></li>
                     <li><a href="#">Über uns</a></li>

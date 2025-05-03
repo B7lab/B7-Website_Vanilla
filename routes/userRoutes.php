@@ -14,8 +14,8 @@ $userRouter->map('GET', '/[i:id]/dashboard', function($id) {
 });
 
 $userRouter->map('GET', '/[i:id]/inventar', function($id) {
-    require_once __DIR__ . '/../controller/userController.php';
-    showInventar($id);
+    require_once __DIR__ . '/../controller/inventoryController.php';
+    showInventory($id);
 });
 
 $userRouter->map('GET', '/[i:id]/shop', function($id) {
@@ -23,31 +23,12 @@ $userRouter->map('GET', '/[i:id]/shop', function($id) {
     showShop($id);
 });
 
-
-
-
-// Authentifizierung
-
-$userRouter->map('GET', '/login', function() {
-    render('auth/login');
+$userRouter->map('GET', '/[i:id]/calendar', function($id) {
+    require_once __DIR__ . '/../controller/calendarController.php';
+    showCalendar($id);
 });
 
-$userRouter->map('POST', '/login', function() {
-    require_once __DIR__ . '/../controller/UserController.php';
-    handleLogin();
-});
 
-$userRouter->map('GET', '/register', function() {
-    render('auth/register');
-});
 
-$userRouter->map('POST', '/register', function() {
-    require_once __DIR__ . '/../controller/UserController.php';
-    handleRegister();
-});
 
-$userRouter->map('GET', '/logout', function() {
-    session_destroy();
-    header("Location: /");
-    exit;
-});
+

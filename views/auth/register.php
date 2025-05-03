@@ -1,6 +1,6 @@
 <div class="container" style="text-align: center; padding: 20px;">
     <h2>Registrieren</h2>
-    <form method="POST" action="/user/register">
+    <form method="POST" action="/auth/register">
         <label>Benutzername:</label><br>
         <input type="text" name="username" required><br><br>
 
@@ -12,5 +12,5 @@
 
         <button type="submit">Registrieren</button>
     </form>
-    <p>Bereits registriert? <a href="/user/login">Einloggen</a></p>
+    <p>Bereits registriert? <a href="/auth/login">Einloggen</a></p>
 </div>

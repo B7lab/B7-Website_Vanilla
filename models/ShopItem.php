@@ -1,7 +1,7 @@
 <?php
 // File: models/ShopItem.php
 
-require_once __DIR__ . '/../config/database.php'; // Deine Datenbankverbindung
+require_once __DIR__ . '/../config/database.php';
 
 class ShopItem {
     public static function getActiveItems() {

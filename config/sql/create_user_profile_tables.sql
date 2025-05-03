@@ -184,6 +184,17 @@ CREATE TABLE IF NOT EXISTS b7_credits (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
+
+CREATE TABLE calendar_events (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,
+  title VARCHAR(255),
+  start DATETIME,
+  end DATETIME,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+
+
 -- Benutzer
 INSERT INTO users (username, email, location, joined_at, profile_description)
 VALUES ('Maik Tappe', 'maik.tappe82@googlemail.com', 'Oer-Erkenschwick', '2023-02-01', 'Tüftler aus dem Ruhrgebiet');

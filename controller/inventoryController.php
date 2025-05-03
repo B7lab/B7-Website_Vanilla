@@ -1,10 +1,5 @@
 <?php
-// File: controllers/ShopController.php
-
-require_once 'models/ShopItem.php';
-require_once 'models/B7Credit.php';
-
-function showShop($id) {
+function showInventory($id) {
     //session_start();
     if (!isset($_SESSION['user_id']) || $_SESSION['user_id'] != $id) {
         header("Location: /login");
@@ -28,9 +23,8 @@ function showShop($id) {
         die("Benutzer nicht gefunden.");
     }
 
-    render('user/shop', [
+    render('user/inventar', [
         'title' => 'Benutzerprofil',
         'inventory' => $inventory
     ]);
 }
-

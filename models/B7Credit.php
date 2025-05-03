@@ -25,6 +25,6 @@ class B7Credit {
             return $stmt->execute();
         }
         
-        return false; // Nicht genug Credits
+        return false;
     }
 }
