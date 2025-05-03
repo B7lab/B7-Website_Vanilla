@@ -1,0 +1,2 @@
+<div style="margin-top:180px !important; position:absolute; top:0px; left:0px; right:0px; bottom:0px;">
+  <iframe src="https://blumenthal7.de/360-grad-rundgang/" style="position: absolute; border:0; height:100%; width:100%;"></div></iframe></div>

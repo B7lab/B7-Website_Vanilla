@@ -1,68 +1,52 @@
 <?php
-$pageTitle = "Startseite";
-include 'php/header.php';
-?>
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-<main>
-    <!-- Banner -->
-    <div id="hero-banner">
-        <div class="hero-buttons">
-            <button id="join-button">
-                <span class="hero-btn-icon">👤</span>
-                <span class="hero-btn-gap"></span>
-                <span class="hero-btn-label">Mitglied werden</span>
-            </button>
-            <button id="donate-button">
-                <span class="hero-btn-icon">💶</span>
-                <span class="hero-btn-gap"></span>
-                <span class="hero-btn-label">Jetzt spenden</span>
-            </button>
-    </div>
-        <img src="assets/logo/logo4.png" alt="B7 Logo" id="hero-banner-logo">
-        <div class="color-band" id="hero-sub-banner-1">
-            <p>Die Zeche</p>
-        </div>
-        <div class="color-band" id="hero-sub-banner-2">
-            <p>zum Mitmachen</p>
-        </div>
-    </div>
+require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/config/database.php';
 
-    <div class=content-container>
-    <section id="teaser">
-        <div id="teaser-box1" class="teaser-box">
-            <a href="#">
-                <div class="teaser-box-content">Vision</div>
-            </a>
-        </div>
-        <div id="teaser-box2" class="teaser-box">
-            <a href="#">
-                <div class="teaser-box-content">Umbauarbeiten</div>
-            </a>
-        </div>
-        <div id="teaser-box3" class="teaser-box">
-            <a href="#">
-                <div class="teaser-box-content">Veranstaltungen</div>
-            </a>
-        </div>
-        <div id="teaser-box4" class="teaser-box">
-            <a href="#">
-                <div class="teaser-box-content">Fotogalerie</div>
-            </a>
-        </div>
-        <div id="teaser-box5" class="teaser-box">
-            <a href="#">
-                <div class="teaser-box-content">Teaser 5</div>
-            </a>
-        </div>
-        <div id="teaser-box6" class="teaser-box">
-            <a href="#">
-                <div class="teaser-box-content">Kooperationspartner:innen</div>
-            </a>
-        </div>
-    </section>
-    </div>
-    
-</main>
+$mainRouter = new AltoRouter();
+$mainRouter->setBasePath('');
+
+$areaRouter = new AltoRouter();
+$areaRouter->setBasePath('/area');
+
+$userRouter = new AltoRouter();
+$userRouter->setBasePath('/user');
+
+function render($view, $data = []) {
+    extract($data);
+    $viewFile = __DIR__ . "/views/$view.php";
+
+    if (!file_exists($viewFile)) {
+        http_response_code(500);
+        echo "View $view nicht gefunden";
+        return;
+    }
+
+    include __DIR__ . "/views/template/layout.php";
+}
 
 
-<?php include 'php/footer.php'; ?>
+require __DIR__ . '/routes/mainRoutes.php';
+require __DIR__ . '/routes/areaRoutes.php';
+require __DIR__ . '/routes/userRoutes.php';
+
+$requestUri = $_SERVER['REQUEST_URI'];
+
+if (str_starts_with($requestUri, '/area')) {
+    $match = $areaRouter->match();
+} else if (str_starts_with($requestUri, '/user')) {
+    $match = $userRouter->match();
+} else {
+    $match = $mainRouter->match();
+}
+
+
+if ($match && is_callable($match['target'])) {
+    call_user_func_array($match['target'], $match['params']);
+} else {
+    http_response_code(404);
+    echo "<h1>404</h1><p>Seite nicht gefunden.</p>";
+}
