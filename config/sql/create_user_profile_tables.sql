@@ -196,8 +196,8 @@ CREATE TABLE calendar_events (
 
 
 -- Benutzer
-INSERT INTO users (username, email, location, joined_at, profile_description)
-VALUES ('Maik Tappe', 'maik.tappe82@googlemail.com', 'Oer-Erkenschwick', '2023-02-01', 'Tüftler aus dem Ruhrgebiet');
+INSERT INTO users (username, email, password_hash, location, joined_at, profile_description)
+VALUES ('Maik Tappe', 'maik.tappe82@googlemail.com', '$2y$10$g/Pd1oWPVjoq1uUWNM2D2eFXZUkFcs.K70Ywg4yuFRXctZbQhkn/m', 'Oer-Erkenschwick', '2023-02-01', 'Tüftler aus dem Ruhrgebiet');
 
 -- Fähigkeiten
 INSERT INTO skills (name) VALUES 
