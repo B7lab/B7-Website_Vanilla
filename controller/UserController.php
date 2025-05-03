@@ -13,7 +13,7 @@ function showUserProfile($id) {
         return;
     }
 
-    render('main/user', [
+    render('user/home', [
         'title' => 'Benutzerprofil',
         'user' => $user
     ]);

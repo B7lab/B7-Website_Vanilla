@@ -12,6 +12,9 @@ $mainRouter->setBasePath('');
 $areaRouter = new AltoRouter();
 $areaRouter->setBasePath('/area');
 
+$userRouter = new AltoRouter();
+$userRouter->setBasePath('/user');
+
 function render($view, $data = []) {
     extract($data);
     $viewFile = __DIR__ . "/views/$view.php";
@@ -28,11 +31,14 @@ function render($view, $data = []) {
 
 require __DIR__ . '/routes/mainRoutes.php';
 require __DIR__ . '/routes/areaRoutes.php';
+require __DIR__ . '/routes/userRoutes.php';
 
 $requestUri = $_SERVER['REQUEST_URI'];
 
 if (str_starts_with($requestUri, '/area')) {
     $match = $areaRouter->match();
+} else if (str_starts_with($requestUri, '/user')) {
+    $match = $userRouter->match();
 } else {
     $match = $mainRouter->match();
 }
