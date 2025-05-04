@@ -5,7 +5,7 @@ $authRouter->map('GET', '/login', function() {
 });
 
 $authRouter->map('POST', '/login', function() {
-    require_once __DIR__ . '/../controller/AuthController.php';
+    require_once __DIR__ . '/../controller/authController.php';
     handleLogin();
 });
 
@@ -14,7 +14,7 @@ $authRouter->map('GET', '/register', function() {
 });
 
 $authRouter->map('POST', '/register', function() {
-    require_once __DIR__ . '/../controller/AuthController.php';
+    require_once __DIR__ . '/../controller/authController.php';
     handleRegister();
 });
 
