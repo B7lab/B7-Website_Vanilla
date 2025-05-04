@@ -1,4 +1,4 @@
-const socket = io('http://wb.midnight-worker.de'); // Server URL
+const socket = io('https://wb.midnight-worker.de'); // Server URL
 
 const canvas = document.getElementById('whiteboard');
 const ctx = canvas.getContext('2d');
