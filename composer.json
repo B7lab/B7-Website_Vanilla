@@ -2,7 +2,8 @@
     "name": "b7/b7-website_vanilla",
     "description": "Website B7 2025",
     "require": {
-        "altorouter/altorouter": "^2.0"
+        "altorouter/altorouter": "^2.0",
+        "vlucas/phpdotenv": "^5.6"
     },
     "autoload": {
         "psr-4": {

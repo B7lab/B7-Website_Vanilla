@@ -1,16 +1,16 @@
 <?php
 
 try {
-    $host = 'localhost';
-    $db = 'b7_website'; 
-    $user = 'webuser';
-    $pass = 'af5jtcs3Gzwr';
-    $charset = 'utf8'; 
+    $host = $_ENV['DB_HOST'];
+    $db = $_ENV['DB_NAME'];
+    $user =  $_ENV['DB_USER'];
+    $pass =  $_ENV['DB_PASS'];
+    $charset = $_ENV['DB_CHARSET']; 
     
     $emailFrom = 'admin@warehouse.com';
     $useInternalMailer = false;
     
-    $pepper = '345fg%$2f4';
+    $pepper = $_ENV['PEPPER'];
 
     session_start();
 
