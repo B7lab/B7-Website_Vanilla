@@ -13,6 +13,11 @@ $userRouter->map('GET', '/[i:id]/dashboard', function($id) {
     showDashboard($id);
 });
 
+$userRouter->map('GET', '/[i:id]/profile', function($id) {
+    require_once __DIR__ . '/../controller/userController.php';
+    showUserProfile($id);
+});
+
 $userRouter->map('GET', '/[i:id]/inventar', function($id) {
     require_once __DIR__ . '/../controller/inventoryController.php';
     showInventory($id);
@@ -26,6 +31,16 @@ $userRouter->map('GET', '/[i:id]/shop', function($id) {
 $userRouter->map('GET', '/[i:id]/calendar', function($id) {
     require_once __DIR__ . '/../controller/calendarController.php';
     showCalendar($id);
+});
+
+$userRouter->map('GET', '/[i:id]/cards', function($id) {
+    require_once __DIR__ . '/../controller/cardController.php';
+    showCards($id);
+});
+
+$userRouter->map('GET', '/[i:id]/whiteboard', function($id) {
+    require_once __DIR__ . '/../controller/wbController.php';
+    showWhiteboard($id);
 });
 
 

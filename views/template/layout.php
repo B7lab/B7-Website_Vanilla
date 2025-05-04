@@ -30,19 +30,24 @@
             </div>
 
             <nav class="menu" id="mainMenu">
-                <ul class="menu-list">
-                    <?php if (isset($_SESSION['username'])): ?>
-                        <li>Eingeloggt als <?php echo htmlspecialchars($_SESSION['username']); ?> | <a href="/auth/logout" style="color: red">Logout</a></li>
-                    <?php else: ?>
-                        <li><a href="/auth/login" style="color: red">Login</a></li> 
-                        <li><a href="/auth/register" style="color: red">Registrieren</a></li>
-                    <?php endif; ?>
-                    <li><a href="#">Start</a></li>
-                    <li><a href="#">Über uns</a></li>
-                    <li><a href="#">Partner</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Kontakt</a></li>
-                </ul>
+            <ul class="menu-list">
+                <?php if (isset($_SESSION['username'])): ?>
+                    <li>👤 Eingeloggt als <?php echo htmlspecialchars($_SESSION['username']); ?> | <a href="/auth/logout" style="color: red">🚪 Logout</a></li>
+                    <?php $userId = $_SESSION['user_id'] ?? 0; ?>
+                <?php else: ?>
+                    <li><a href="/auth/login" style="color: red">🔑 Login</a></li> 
+                    <li><a href="/auth/register" style="color: red">📝 Registrieren</a></li>
+                    <?php $userId = null; ?>
+                <?php endif; ?>
+                <li><a href="<?= $userId ? "/user/$userId/dashboard" : '/' ?>">🏠 Dashboard</a></li>
+                <li><a href="<?= $userId ? "/user/$userId/calendar" : '/' ?>">📅 Kalender</a></li>
+                <hr>
+                <li><a href="<?= $userId ? "/user/$userId/profile" : '/' ?>">🙍‍♂️ Profil</a></li>
+                <li><a href="<?= $userId ? "/user/$userId/inventar" : '/' ?>">📦 Inventar</a></li>
+                <li><a href="<?= $userId ? "/user/$userId/shop" : '/' ?>">🛒 Shop</a></li>
+                <li><a href="<?= $userId ? "/user/$userId/cards" : '/' ?>">🧭 Planung</a></li>
+                <li><a href="<?= $userId ? "/user/$userId/whiteboard" : '/' ?>">🧻 Whiteboard</a></li>
+            </ul>
             </nav>
         </div>
     </header>
