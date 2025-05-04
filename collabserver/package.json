@@ -1,0 +1,15 @@
+{
+  "name": "collabserver",
+  "version": "1.0.0",
+  "description": "Websocketserver für die B7-Website",
+  "main": "whiteboardserver.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": "Maik Tappe",
+  "license": "MIT",
+  "dependencies": {
+    "socketio": "^1.0.0",
+    "ws": "^8.18.2"
+  }
+}
