@@ -1,18 +1,4 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;dbname=b7;charset=utf8', 'root', ''); // ggf. Zugangsdaten anpassen
-
-// Alle eigenen Items laden (z. B. für user_id = 1)
-$stmt = $pdo->prepare("
-    SELECT ii.id, c.name AS item_name, ii.condition, ii.location, ii.quantity,
-           io.offer_type, io.price, io.rental_period, io.available_from, io.available_until
-    FROM inventory_items ii
-    LEFT JOIN contributions c ON ii.contribution_id = c.id
-    LEFT JOIN item_offers io ON ii.id = io.item_id
-    WHERE ii.owner_id = :user_id
-");
-$stmt->execute(['user_id' => 1]);
-$items = $stmt->fetchAll(PDO::FETCH_ASSOC);
-?>
 
 <!DOCTYPE html>
 <html lang="de">
