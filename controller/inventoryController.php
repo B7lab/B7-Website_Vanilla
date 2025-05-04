@@ -25,6 +25,6 @@ function showInventory($id) {
 
     render('user/inventar', [
         'title' => 'Benutzerprofil',
-        'inventory' => $inventory
+        'items' => $inventory
     ]);
 }
