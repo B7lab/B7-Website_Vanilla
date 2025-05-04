@@ -17,7 +17,7 @@ function showInventory($id) {
             WHERE ii.owner_id = :user_id"
     );
     $stmt->execute(['user_id' => 1]);
-    $inventory = $stmt->fetch(PDO::FETCH_ASSOC);
+    $inventory = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if (!$inventory) {
         die("Benutzer nicht gefunden.");
