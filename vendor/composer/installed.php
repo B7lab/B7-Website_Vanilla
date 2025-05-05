@@ -2,6 +2,7 @@
     'root' => array(
         'name' => 'b7/b7-website_vanilla',
 <<<<<<< HEAD
+<<<<<<< HEAD
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
         'reference' => 'cace9b5e39013a2ceaefb62de5b9504efdfbffa9',
@@ -10,6 +11,16 @@
         'version' => 'dev-develop',
         'reference' => '2455b59240a762f53b2426887c09c04664b654d8',
 >>>>>>> 408e65d58b3ac2ad99b1e52c5387757433b59530
+=======
+        'pretty_version' => 'dev-develop',
+        'version' => 'dev-develop',
+        'reference' => '2455b59240a762f53b2426887c09c04664b654d8',
+=======
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'cace9b5e39013a2ceaefb62de5b9504efdfbffa9',
+>>>>>>> 7ca50b1276af3b44efb9180d498ec615725f4a4e
+>>>>>>> c3666d88781072072b7678be86645644cc90db44
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -27,6 +38,7 @@
         ),
         'b7/b7-website_vanilla' => array(
 <<<<<<< HEAD
+<<<<<<< HEAD
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
             'reference' => 'cace9b5e39013a2ceaefb62de5b9504efdfbffa9',
@@ -35,6 +47,16 @@
             'version' => 'dev-develop',
             'reference' => '2455b59240a762f53b2426887c09c04664b654d8',
 >>>>>>> 408e65d58b3ac2ad99b1e52c5387757433b59530
+=======
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
+            'reference' => '2455b59240a762f53b2426887c09c04664b654d8',
+=======
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'cace9b5e39013a2ceaefb62de5b9504efdfbffa9',
+>>>>>>> 7ca50b1276af3b44efb9180d498ec615725f4a4e
+>>>>>>> c3666d88781072072b7678be86645644cc90db44
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
