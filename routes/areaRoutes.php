@@ -3,7 +3,10 @@ $areaRouter->map('GET', '/vision', function() {
     render('area/vision');
 });
 
-$areaRouter->map('GET', '/umbauarbeiten', function() {
+$areaRouter->map('GET', '/das-projekt-erkunden', function() {
+    render('area/das-projekt-erkunden');
+
+});$areaRouter->map('GET', '/umbauarbeiten', function() {
     render('area/umbauarbeiten');
 });
 

@@ -16,10 +16,56 @@ $pageTitle = 'Startseite';
         <br>
         <p>
             <b>Auf vielfältige Art und Weise darfst auch du dich gerne einbringen.</b>
-        </p>   
+        </p>
+        <?php
+        $teasers = [
+            [
+                'title' => 'Unsere Vision',
+                'url' => '/area/vision',
+                'image'=> '/public/img/teaser/teaser1.jpg',
+            ],
+            [
+                'title' => 'Entdecke das Projekt',
+                'url' => '/area/das-projekt-entdecken',
+                'image'=> '/public/img/teaser/teaser2.jpg',
+            ],
+            [
+                'title' => 'Veranstaltungen',
+                'url' => '/area/veranstaltungen',
+                'image'=> '/public/img/teaser/teaser3.jpg',
+            ],
+            [
+                'title' => 'Teaser 4',
+                'url' => '/area/teaser4',
+                'image'=> '/public/img/teaser/teaser4.jpg',
+            ],
+            [
+                'title' => 'Teaser 5',
+                'url' => '/area/teaser5',
+                'image'=> '/public/img/teaser/teaser5.jpg',
+            ],
+            [
+                'title' => 'Unsere Partner:innen',
+                'url' => '/area/kooperationspartner_innen',
+                'image'=> '/public/img/teaser/teaser6.jpg',
+            ]
+        ];
+        ?>
+        <div class="teaser-container">
+            <section class="teaser-3grid">
+                <?php foreach ($teasers as $teaser): ?>
+                    <div class="teaser-box">
+                        <a href="<?= htmlspecialchars($teaser['url']) ?>">
+                            <img src="<?= htmlspecialchars($teaser['image']) ?>" alt="" class="teaser-image">
+                            <div class="teaser-box-content"><?= htmlspecialchars($teaser['title']) ?></div>
+                        </a>
+                    </div>
+                <?php endforeach; ?>
+            </section>
+        </div>
     </div>
 
-    <div class=teaser-container>
+    <!-- <div class=teaser-container>
         <section id="teaser">
             <div id="teaser-box1" class="teaser-box">
                 <a href="/area/vision">
@@ -27,8 +73,8 @@ $pageTitle = 'Startseite';
                 </a>
             </div>
             <div id="teaser-box2" class="teaser-box">
-                <a href="/area/umbauarbeiten">
-                    <div class="teaser-box-content">Umbauarbeiten</div>
+                <a href="/area/das-projekt-erkunden">
+                    <div class="teaser-box-content">Das Projekt erkunden</div>
                 </a>
             </div>
             <div id="teaser-box3" class="teaser-box">
@@ -52,7 +98,9 @@ $pageTitle = 'Startseite';
                 </a>
             </div>
         </section>
-    </div>
+    </div> -->
+    
+
     
 </main>
 

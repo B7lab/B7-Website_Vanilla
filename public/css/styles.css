@@ -73,6 +73,43 @@ section {
     text-align: center;   
 }
 
+.content-container {
+    max-width: 1200px;
+    background-color: var(--waschkauenweiss);
+    margin: 0 auto;
+    padding: 50px 50px;
+    position: relative;
+    overflow: visible;
+    color: var(--kohlenschwarz);
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);;
+}
+
+.content-container ul {
+    margin-left: 5%
+}
+
+.content-container li::marker {
+    color: black; /* Fallback */
+  }
+  
+  .marker-blau::marker {
+    color: var(--technikblau);
+  }
+  
+  .marker-rot::marker {
+    color: var(--signalrot);
+  }
+  
+  .marker-gelb::marker {
+    color: var(--b7-gelb);
+  }
+  
+  .marker-gruen::marker {
+    color: var(--zukunftsgrün);
+  }
+
+
 /* ------------- */
 /* ---DESIGNS--- */
 /* ------------- */
@@ -96,6 +133,24 @@ section {
     z-index: 10;
 }
 
+.color-box {
+    display: inline-block;
+    position: relative;
+    left: -10px;
+    top: 0.2rem;
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.block-heading {
+    text-align: left;
+    position: relative;
+    padding-left: 0%;
+    margin-left: -52px
+
+}
 
 /* Bilder */
 
@@ -405,20 +460,6 @@ section {
     background-color: var(--technikblau)
 }
 
-/* #join-button, #donate-button {
-    background-color: transparent !important;
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    overflow: hidden;
-    transition: background-color 0.3s ease;
-    padding: 0;
-    height: 30px;
-} */
-
 .banner-btn-icon {
     background-color: var(--b7-gelb);
     width: 30px;
@@ -494,27 +535,45 @@ section {
 /* Teaser-Boxen */
 
 .teaser-container {
-    max-width: 1400px;
-    margin: 0 auto;
+    width: calc(100% + 20vh);
+    margin-left: -10vh;
+    margin-right: -20vh;
     padding: 10px;
 }
 
-#teaser {
+.teaser-3grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 20px; 
     margin: 20px;
-    grid-template-rows: auto auto;
+}
+
+.teaser-4grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px; 
+    margin: 20px;
+}
+
+.teaser-5grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px; 
+    margin: 20px;
+}
+
+.teaser-6grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px; 
+    margin: 20px;
 }
 
 .teaser-box {
     position: relative;
     width: 100%;
-    height: 0;
-    padding-bottom: 99%; 
+    aspect-ratio: 1/1;
     background-color: var(--hellgrau);
-    background-size: cover;
-    background-position: center;
     overflow: hidden;
 }
 
@@ -524,6 +583,16 @@ section {
     height: 100%;
     text-decoration: none;
     color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.teaser-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
     position: absolute;
     top: 0;
     left: 0;
@@ -631,71 +700,6 @@ section {
     text-transform: uppercase;
     font-weight: bold;
 }
-
-/* ---------------- */
-/* ---CONTENT--- */
-/* ---------------- */
-
-.content-container {
-    max-width: 1200px;
-    background-color: var(--waschkauenweiss);
-    margin: 0 auto;
-    padding: 50px 50px;
-    position: relative;
-    overflow: visible;
-    color: var(--kohlenschwarz);
-    font-size: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);;
-}
-
-.content-container ul {
-    margin-left: 5%
-}
-
-.content-container li::marker {
-    color: black; /* Fallback */
-  }
-  
-  .marker-blau::marker {
-    color: var(--technikblau);
-  }
-  
-  .marker-rot::marker {
-    color: var(--signalrot);
-  }
-  
-  .marker-gelb::marker {
-    color: var(--b7-gelb);
-  }
-  
-  .marker-gruen::marker {
-    color: var(--zukunftsgrün);
-  }
-  
-.content-container img {
-    max-width: 75%;
-}
-
-.color-box {
-    display: inline-block;
-    position: relative;
-    left: -10px;
-    top: 0.2rem;
-    width: 32px;
-    height: 32px;
-    margin-right: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.block-heading {
-    text-align: left;
-    position: relative;
-    padding-left: 0%;
-    margin-left: -52px
-
-}
-
-
 
 /* ----------------- */
 /* RESPONSIVE DESIGN */
