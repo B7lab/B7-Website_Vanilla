@@ -1,8 +1,8 @@
-create database IF NOT EXISTS b7
+create database IF NOT EXISTS b7_website
 CHARACTER SET utf8mb4
-COLLATE utf8mb4_general_ci
+COLLATE utf8mb4_general_ci;
 
-use b7;
+use b7_website;
 
 CREATE TABLE if not exists users (
     id INT AUTO_INCREMENT PRIMARY KEY,
