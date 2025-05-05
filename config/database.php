@@ -2,13 +2,13 @@
 
 function getDatabaseConnection() {
     static $pdo = null;
-
+echo("test");
     if ($pdo === null) {
-        $host = 'localhost';
-        $dbname = 'b7';
-        $user = 'b7';
-        $pass = '1234';
-        $charset = 'utf8';
+        $host = $_ENV['DB_HOST'];
+        $dbname = $_ENV['DB_NAME'];
+        $user = $_ENV['DB_USER'];
+        $pass = $_ENV['DB_PASS'];
+        $charset = $_ENV['DB_CHARSET']; 
 
         $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
         $options = [
