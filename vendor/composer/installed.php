@@ -3,7 +3,7 @@
         'name' => 'b7/b7-website_vanilla',
         'pretty_version' => 'dev-develop',
         'version' => 'dev-develop',
-        'reference' => 'bf43c21e32b5b916aa6cfd6597a0d5f53590ea95',
+        'reference' => '2455b59240a762f53b2426887c09c04664b654d8',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'b7/b7-website_vanilla' => array(
             'pretty_version' => 'dev-develop',
             'version' => 'dev-develop',
-            'reference' => 'bf43c21e32b5b916aa6cfd6597a0d5f53590ea95',
+            'reference' => '2455b59240a762f53b2426887c09c04664b654d8',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
