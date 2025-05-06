@@ -2,7 +2,7 @@
     <?php
         $pageTitle = "Veranstaltungen";
         $pageSubtitle = "Wir sind ein Ort der Begegnung und des Austausches";
-        include __DIR__ . '/../template/page-banner.php'; 
+        include ROOT_PATH . '/views/template/page-banner.php'; 
     ?>
 
     <div class=content-container>

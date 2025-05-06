@@ -2,7 +2,7 @@
     <?php
         $pageTitle = "Virtueller Rundgang";
         $pageSubtitle = "Entdecke unsere Arbeit und deine Möglichkeiten";
-        include __DIR__ . '/../template/page-banner.php'; 
+        include ROOT_PATH . '/views/template/page-banner.php'; 
     ?>
     <div class="content-container">
         <div id="hud" style="position: absolute; top: 10px; left: 10px; background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px; font-family: Arial, sans-serif; font-size: 14px;">

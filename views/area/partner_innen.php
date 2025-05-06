@@ -2,7 +2,7 @@
     <?php
         $pageTitle = "Unsere Kooperationspartner:innen";
         $pageSubtitle = "Wir sind ein Ort der Begegnung und des Austausches";
-        include __DIR__ . '/../template/page-banner.php'; 
+        include ROOT_PATH . '/views/template/page-banner.php'; 
     ?>
 
     <div class=content-container>
@@ -28,9 +28,9 @@
                 'image'=> '/public/img/area/partner_innen/teaser3.jpg',
             ],
             [
-                'title' => 'Teaser 4',
-                'url' => '/area/teaser4',
-                'image'=> '/public/img/area/partner_innen/teaser4.jpg',
+                'title' => 'c3re',
+                'url' => '/area/partner_innen/c3re',
+                'image'=> '/public/img/area/partner_innen/c3re.png',
             ],
             [
                 'title' => 'Teaser 5',

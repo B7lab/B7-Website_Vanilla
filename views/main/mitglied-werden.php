@@ -3,7 +3,7 @@
     <?php
         $pageTitle = "Mitglied werden";
         $pageSubtitle = "Werde Teil des Projekts";
-        include __DIR__ . '/../template/page-banner.php'; 
+        include ROOT_PATH . '/views/template/page-banner.php'; 
     ?>
     <div class="content-container">
         <h2 class="block-heading">So, wie es zu dir passt</h2>

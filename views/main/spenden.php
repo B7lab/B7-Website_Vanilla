@@ -2,7 +2,7 @@
     <?php
         $pageTitle = "Spenden";
         $pageSubtitle = "Hilf mit, Blumenthal 7 neu zu beleben";
-        include __DIR__ . '/../template/page-banner.php'; 
+        include ROOT_PATH . '/views/template/page-banner.php'; 
     ?>
     <div class="content-container">
         <h2 class="block-heading">Warum wir Deine Unterstützung brauchen</h2>

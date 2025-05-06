@@ -1,31 +1,41 @@
 <?php
+
+//  UNSERE VISION
 $areaRouter->map('GET', '/vision', function() {
     render('area/vision');
 });
 
-$areaRouter->map('GET', '/das-projekt-erkunden', function() {
-    render('area/das-projekt-erkunden');
+// PROJEKT ERKUNDEN
+$areaRouter->map('GET', '/projekt-erkunden', function() {
+    render('area/projekt-erkunden');
 
 });$areaRouter->map('GET', '/umbauarbeiten', function() {
     render('area/umbauarbeiten');
-});
-
-$areaRouter->map('GET', '/veranstaltungen', function() {
-    render('area/veranstaltungen');
 });
 
 $areaRouter->map('GET', '/fotogalerie', function() {
     render('area/fotogalerie');
 });
 
-$areaRouter->map('GET', '/teaser5', function() {
-    render('area/teaser5');
-});
-
-$areaRouter->map('GET', '/kooperationspartner_innen', function() {
-    render('area/kooperationspartner_innen');
-});
-
 $areaRouter->map('GET', '/rundgang', function() {
     render('area/virtuellerRundgang');
+});
+
+//  VERANSTALTUNGEN
+$areaRouter->map('GET', '/veranstaltungen', function() {
+    render('area/veranstaltungen');
+});
+
+// PARTNER:INNEN
+$areaRouter->map('GET', '/partner_innen', function() {
+    render('area/partner_innen');
+});
+
+$areaRouter->map('GET', '/partner_innen/kystlys', function() {
+    render('area/partner_innen/kystlys');
+});
+
+
+$areaRouter->map('GET', '/teaser5', function() {
+    render('area/teaser5');
 });

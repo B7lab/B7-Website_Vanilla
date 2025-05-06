@@ -3,7 +3,7 @@
     <?php
         $pageTitle = "Kontakt";
         $pageSubtitle = "";
-        include __DIR__ . '/../template/page-banner.php'; 
+        include ROOT_PATH . '/views/template/page-banner.php'; 
     ?>
     <div class="content-container">
         <h2 class="block-heading">Anfahrt </h2>

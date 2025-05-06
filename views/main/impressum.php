@@ -3,7 +3,7 @@
     <?php
         $pageTitle = "Impressum";
         $pageSubtitle = "";
-        include __DIR__ . '/../template/page-banner.php'; 
+        include ROOT_PATH . '/views/template/page-banner.php'; 
     ?>
     <div class="content-container">
         <h2 class="block-heading">Angaben gemäß § 5 DDG</h2>

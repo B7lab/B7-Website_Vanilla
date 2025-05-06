@@ -38,6 +38,7 @@ function render($view, $data = []) {
     include __DIR__ . "/views/template/layout.php";
 }
 
+define('ROOT_PATH', __DIR__);
 require __DIR__ . '/routes/mainRoutes.php';
 require __DIR__ . '/routes/areaRoutes.php';
 require __DIR__ . '/routes/userRoutes.php';

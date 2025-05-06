@@ -2,7 +2,7 @@
     <?php
         $pageTitle = "Das Projekt";
         $pageSubtitle = "Entdecke unsere Arbeit und deine Möglichkeiten";
-        include __DIR__ . '/../template/page-banner.php'; 
+        include ROOT_PATH . '/views/template/page-banner.php'; 
     ?>
     <div class="content-container">
         <h2 class="block-heading">Die Umbauarbeiten</h2>

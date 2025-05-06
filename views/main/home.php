@@ -26,7 +26,7 @@ $pageTitle = 'Startseite';
             ],
             [
                 'title' => 'Entdecke das Projekt',
-                'url' => '/area/das-projekt-entdecken',
+                'url' => '/area/projekt-erkunden',
                 'image'=> '/public/img/teaser/teaser2.jpg',
             ],
             [
@@ -46,7 +46,7 @@ $pageTitle = 'Startseite';
             ],
             [
                 'title' => 'Unsere Partner:innen',
-                'url' => '/area/kooperationspartner_innen',
+                'url' => '/area/partner_innen',
                 'image'=> '/public/img/teaser/teaser6.jpg',
             ]
         ];
