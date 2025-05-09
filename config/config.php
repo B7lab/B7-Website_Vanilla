@@ -2,6 +2,7 @@
 
 try {
     $host = $_ENV['DB_HOST'];
+    $port = $_ENV['DB_PORT'];
     $db = $_ENV['DB_NAME'];
     $user =  $_ENV['DB_USER'];
     $pass =  $_ENV['DB_PASS'];
@@ -14,7 +15,7 @@ try {
 
     session_start();
 
-    $conn = new PDO("mysql:host=$host;dbname=$db;charset=$charset", $user, $pass, [
+    $conn = new PDO("mysql:host=$host;port=$port;dbname=$db;charset=$charset", $user, $pass, [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         PDO::ATTR_EMULATE_PREPARES => false,

@@ -4,13 +4,14 @@ function getDatabaseConnection() {
     static $pdo = null;
 
     if ($pdo === null) {
-        $host = 'localhost';
-        $dbname = 'b7';
-        $user = 'b7';
-        $pass = '1234';
-        $charset = 'utf8';
+        $host = $_ENV['DB_HOST'];
+        $db = $_ENV['DB_NAME'];
+        $port = $_ENV['DB_PORT'];
+        $user =  $_ENV['DB_USER'];
+        $pass =  $_ENV['DB_PASS'];
+        $charset = $_ENV['DB_CHARSET']; 
 
-        $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
+        $dsn = "mysql:host=$host;port=$port;dbname=$dbname;charset=$charset";
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
