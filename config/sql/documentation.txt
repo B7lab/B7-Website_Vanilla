@@ -1,0 +1,7 @@
+auf cygwin daemon laden mit console und auf 127.0.0.1 arbeiten, statt auf localhost, sonst gibt's probleme mit dem sock irgendwas.
+
+./mysqld --console &
+
+und dann
+
+mysql -u root -h 127.0.0.1 -p

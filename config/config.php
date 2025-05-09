@@ -1,5 +1,5 @@
 <?php
-
+Dotenv\Dotenv::createImmutable(__DIR__ . '/../')->load();
 try {
     $host = $_ENV['DB_HOST'];
     $port = $_ENV['DB_PORT'];
