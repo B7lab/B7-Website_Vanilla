@@ -82,19 +82,16 @@ $(document).ready(function () {
         const burgerIcon = document.querySelector('.burger-menu');
         const burgerLines = document.querySelectorAll('.burger-menu div'); 
 
-        const menuDuration = 0.5; // Synchronisierter Zeitwert
-
+        const menuDuration = 0.5; 
         if (!menu.classList.contains('open')) {
-            // Menü öffnen
             gsap.to(menu, {
                 right: 0,
                 duration: menuDuration,
                 ease: "power2.out",
             });
 
-            // Linienfarbe: weiß → kohlenschwarz
             gsap.to(burgerLines, {
-                backgroundColor: "var(--kohlenschwarz)",
+                backgroundColor: "var(--dunkelgrau)",
                 duration: menuDuration,
                 ease: "power2.out"
             });
@@ -102,14 +99,12 @@ $(document).ready(function () {
             menu.classList.add('open');
             burgerIcon.classList.add('open');
         } else {
-            // Menü schließen
             gsap.to(menu, {
                 right: '-100%',
                 duration: menuDuration,
                 ease: "power2.in",
             });
 
-            // Linienfarbe: kohlenschwarz → weiß
             gsap.to(burgerLines, {
                 backgroundColor: "white",
                 duration: menuDuration,
