@@ -52,26 +52,6 @@
         blackbird spyplane meditation before they sold out marfa viral. Marxism listicle retro, selfies forage ramps quinoa 
         hoodie irony blackbird spyplane pork belly ascot.
         </p>
-        <div class="info-box float-right">
-            <table class="info-table">
-                <tr>
-                    <th>Partner seit</th>
-                    <td>2022</td>
-                </tr>
-                <tr>
-                    <th>TEXT</th>
-                    <td>text</td>
-                </tr>
-                <tr>
-                    <th>TEXT</th>
-                    <td>text</td>
-                </tr>
-                <tr>
-                    <th>Kontakt</th>
-                    <td>kystlys.eu</td>
-                </tr>
-            </table>
-        </div>
     </div>  
 </main>
 

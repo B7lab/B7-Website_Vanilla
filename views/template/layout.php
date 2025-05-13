@@ -29,6 +29,8 @@
                 <div></div>
             </div>
 
+            <div class="menu-color-band"></div>
+            
             <nav class="menu" id="mainMenu">
             <ul class="menu-list">
                 <?php if (isset($_SESSION['username'])): ?>
