@@ -15,8 +15,8 @@ $mainRouter->map('GET', '/datenschutz', function() {
     render('main/datenschutz');
 });
 
-$mainRouter->map('GET', '/mitglied-werden', function() {
-    render('main/mitglied-werden');
+$mainRouter->map('GET', '/unterstuetzung', function() {
+    render('main/unterstuetzung');
 });
 
 $mainRouter->map('GET', '/spenden', function() {

@@ -5,8 +5,6 @@ $pageTitle = 'Startseite';
 ?>
 <main>
 <?php include __DIR__ . '/../template/hero-banner.php'; ?>
-<?php //include __DIR__ . '/../template/animated_b7logo_3.php'; ?>
-
     <div class="content-container" id="landing-page-content">
         <h2>Überschrift Einstieg</h2>
         <p>
@@ -65,42 +63,7 @@ $pageTitle = 'Startseite';
         </div>
     </div>
 
-    <!-- <div class=teaser-container>
-        <section id="teaser">
-            <div id="teaser-box1" class="teaser-box">
-                <a href="/area/vision">
-                    <div class="teaser-box-content">Vision</div>
-                </a>
-            </div>
-            <div id="teaser-box2" class="teaser-box">
-                <a href="/area/das-projekt-erkunden">
-                    <div class="teaser-box-content">Das Projekt erkunden</div>
-                </a>
-            </div>
-            <div id="teaser-box3" class="teaser-box">
-                <a href="/area/veranstaltungen">
-                    <div class="teaser-box-content">Veranstaltungen</div>
-                </a>
-            </div>
-            <div id="teaser-box4" class="teaser-box">
-                <a href="/area/fotogalerie">
-                    <div class="teaser-box-content">Fotogalerie</div>
-                </a>
-            </div>
-            <div id="teaser-box5" class="teaser-box">
-                <a href="/area/rundgang">
-                    <div class="teaser-box-content">Virtueller Rundgang</div>
-                </a>
-            </div>
-            <div id="teaser-box6" class="teaser-box">
-                <a href="/area/kooperationspartner_innen">
-                    <div class="teaser-box-content">Kooperationspartner:innen</div>
-                </a>
-            </div>
-        </section>
-    </div> -->
     
-
     
 </main>
 

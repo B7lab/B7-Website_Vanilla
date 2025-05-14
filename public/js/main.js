@@ -149,8 +149,8 @@ $(document).ready(function () {
 
         $(this).on("mouseenter", function () {
             box.css({
-                "width": "32px",
-                "height": "32px",
+                "width": "24px",
+                "height": "24px",
                 "opacity": "1"
             });
         });

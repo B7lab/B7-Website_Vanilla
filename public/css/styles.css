@@ -193,6 +193,8 @@ section {
 /* ------------ */
 
 #main-header {
+    
+    position: relative;
     display: flex;
     justify-content: space-between; 
     align-items: center;
@@ -280,10 +282,10 @@ section {
 /* Menü Styling */
 .menu {
     position: fixed;
-    top: 0px;
+    top: 20px;
     right: -100%;  
     width: 18%;
-    height: 100vh;
+    height: 90vh;
     background-color: var(--hellgrau);
     box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -301,7 +303,7 @@ section {
 .menu-list {
     list-style: none;
     padding: 0;
-    margin-top: 60px;
+    margin-top: 40px;
 }
 
 .menu-list > li > a {
@@ -329,23 +331,35 @@ section {
     opacity: 0;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
 }
 
-/* Untermenü */
+/* Submenü Styling */
 .menu-list .sub-menu {
-    display: none;
-    padding-left: 15px;
-}
-
-.menu-list li.has-submenu > a::after {
-    content: " ▼";
-    font-size: 0.8rem;
-}
-
-.menu-list li.open > .sub-menu {
+    padding-left: 24px;
+    list-style: none;
     display: block;
 }
+
+.menu-list .sub-menu li {
+    padding: 8px 0;
+}
+
+.menu-list .sub-menu li a {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--waschkauenweiss);
+    text-decoration: none;
+    padding: 8px 4px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Submenü Hover-Effekt */
+.menu-list .sub-menu li a:hover {
+    background-color: var(--technikblau);
+    color: var(--waschkauenweiss);
+}
+
 
 /* Footer */
 
@@ -450,7 +464,8 @@ section {
 
 .banner-buttons {
     position: absolute;
-    top: 3%;
+    top: 100%;
+    margin-top: 10px;
     right: 0;
     display: flex;
     flex-direction: column;
