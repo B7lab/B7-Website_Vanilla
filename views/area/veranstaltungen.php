@@ -6,9 +6,9 @@
     ?>
 
     <div class=content-container>
-        <p>
-            Content
-        </p>
+        <div id="calendar"></div>
+        <script src="https://unpkg.com/ical.js@1.4.0/build/ical.min.js"></script>
+        <script src="/public/js/calendar.js"></script>
     </div>
     
 </main>

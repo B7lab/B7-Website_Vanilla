@@ -37,12 +37,10 @@ $(document).ready(function () {
         const button = document.querySelector(buttonSelector);
         if (!button) return;
 
-        // Verzögert ausführen, damit offsetWidth gültig ist
         requestAnimationFrame(() => {
             const buttonWidth = button.offsetWidth;
             const hiddenX = buttonWidth - iconWidth;
 
-            // Startposition
             gsap.set(button, {
                 x: 0
             });
