@@ -13,14 +13,14 @@
         <?php
         $teasers = [
             [
+                'title' => 'c3RE',
+                'url' => '/area/partner_innen/c3re',
+                'image'=> '/public/img/area/partner_innen/c3re.png',
+            ],
+            [
                 'title' => 'Kystlys',
                 'url' => '/area/partner_innen/kystlys',
                 'image'=> '/public/img/area/partner_innen/kystlys.png',
-            ],
-            [
-                'title' => 'Waldritter',
-                'url' => '/area/partner_innen/waldritter',
-                'image'=> '/public/img/area/partner_innen/waldritter.jpg',
             ],
             [
                 'title' => 'Skulpturengarten',
@@ -28,14 +28,14 @@
                 'image'=> '/public/img/area/partner_innen/teaser3.jpg',
             ],
             [
-                'title' => 'c3re',
-                'url' => '/area/partner_innen/c3re',
-                'image'=> '/public/img/area/partner_innen/c3re.png',
+                'title' => 'DARC - Deutscher Amateur Radio Club',
+                'url' => '/area/partner_innen/darc-deutscher_amateur_radio_club',
+                'image'=> '/public/img/area/partner_innen/darc-deutscher_amateur_radio_club.png',
             ],
             [
-                'title' => 'Teaser 5',
-                'url' => '/area/partner_innen/teaser5',
-                'image'=> '/public/img/area/partner_innen/teaser5.jpg',
+                'title' => 'Waldritter',
+                'url' => '/area/partner_innen/waldritter',
+                'image'=> '/public/img/area/partner_innen/waldritter.png',
             ],
             [
                 'title' => 'Teaser 6',
@@ -45,7 +45,7 @@
         ];
         ?>
         <div class="teaser-container">
-            <section class="teaser-4grid">
+            <section class="teaser-item teaser-4grid">
                 <?php foreach ($teasers as $teaser): ?>
                     <div class="teaser-box">
                         <a href="<?= htmlspecialchars($teaser['url']) ?>">

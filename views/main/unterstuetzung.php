@@ -29,7 +29,21 @@
         <h2 class="block-heading">Spenden</h2>
         <p>
             Alle im Projekt arbeiten freiwillig – aber ohne Geld für Material, Ausstattung und laufende Kosten geht es nicht. 
-            Jeder Euro hilft uns, weiterzumachen. <b>Deine Spende ist steuerlich absetzbar.</b></br>
+            Jeder Euro hilft uns, weiterzumachen. Du kannst uns vor Ort am <b>SumUp!-Terminal</b> per EC-Karte unterstützen oder 
+            durch eine Überweisung an folgende Bankverbindung. <b>Deine Spende ist steuerlich absetzbar. 
+        <table>
+            <tr>
+                <td>Bank</td>
+                <td>Sparkasse Vest Recklinghausen</td>
+            </tr>
+            <tr>
+                <td>IBAN</td>
+                <td>DE95 4265 0150 1000 047876</td>
+            </tr>
+            <tr>
+                <td>BIC</td><td>WELADED1REK</td>
+            </tr>
+        </table>
             Danke für Deine Unterstützung!
         </p>
     </div>  

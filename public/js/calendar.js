@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
         };
       });
 
-      // Zeitraum: heute bis in einem Monat
       const now = new Date();
       const oneMonthFromNow = new Date();
       oneMonthFromNow.setMonth(now.getMonth() + 1);
