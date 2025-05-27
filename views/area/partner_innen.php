@@ -45,7 +45,7 @@
         ];
         ?>
         <div class="teaser-container">
-            <section class="teaser-item teaser-4grid">
+            <section class="teaser-item teaser-3grid">
                 <?php foreach ($teasers as $teaser): ?>
                     <div class="teaser-box">
                         <a href="<?= htmlspecialchars($teaser['url']) ?>">

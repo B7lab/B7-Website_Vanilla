@@ -33,16 +33,6 @@ $pageTitle = 'Startseite';
                 'image'=> '/public/img/teaser/teaser3.jpg',
             ],
             [
-                'title' => 'Teaser 4',
-                'url' => '/area/teaser4',
-                'image'=> '/public/img/teaser/teaser4.jpg',
-            ],
-            [
-                'title' => 'Teaser 5',
-                'url' => '/area/teaser5',
-                'image'=> '/public/img/teaser/teaser5.jpg',
-            ],
-            [
                 'title' => 'Unsere Partner:innen',
                 'url' => '/area/partner_innen',
                 'image'=> '/public/img/teaser/teaser6.jpg',
@@ -50,7 +40,7 @@ $pageTitle = 'Startseite';
         ];
         ?>
         <div class="teaser-container">
-            <section class="teaser-3grid">
+            <section class="teaser-2grid">
                 <?php foreach ($teasers as $teaser): ?>
                     <div class="teaser-box">
                         <a href="<?= htmlspecialchars($teaser['url']) ?>">

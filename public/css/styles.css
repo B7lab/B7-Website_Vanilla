@@ -618,9 +618,9 @@ caption {
     align-items: center;
 }
 
-.teaser-box {
+.teaser-2grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
+    grid-template-columns: repeat(2, 1fr); 
     gap: 20px; 
     margin: 20px;
 }
@@ -661,6 +661,7 @@ caption {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
 }
 
 .teaser-box a {
@@ -689,12 +690,11 @@ caption {
 .teaser-box-content {
     position: absolute;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
     width: 100%;
+    height: 20%;
     text-align: center;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     background: rgba(0, 0, 0, 0.8);
     padding: 10px;
     z-index: 2; 

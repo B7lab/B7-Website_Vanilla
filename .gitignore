@@ -1,3 +1,4 @@
 .env
 d
-collabserver/node_modules/
+
+/vendor/
