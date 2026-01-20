@@ -7,7 +7,6 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/config/database.php';
 
 $mainRouter = new AltoRouter();
 $mainRouter->setBasePath('');
@@ -36,8 +35,6 @@ function render($view, $data = []) {
 
 require __DIR__ . '/routes/mainRoutes.php';
 require __DIR__ . '/routes/areaRoutes.php';
-require __DIR__ . '/routes/userRoutes.php';
-require __DIR__ . '/routes/authRoutes.php';
 
 $requestUri = $_SERVER['REQUEST_URI'];
 
